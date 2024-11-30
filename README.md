@@ -45,6 +45,15 @@ python3 -m http.server --directory build/html
 ...and open http://localhost:8000/ in a web browser.
 
 
+## Viewing live updates during development
+
+Instead of doing a manual build (e.g. `make html` then running the Python HTTP server), you can set up a live build-and-serve process that watches as you update source files:
+
+```bash
+sphinx-autobuild source build --host 0.0.0.0
+```
+
+
 ## Editing
 
 I use VSCode. I have these extensions installed (but not sure whether I actually *benefit* from all or not):

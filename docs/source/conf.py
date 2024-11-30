@@ -31,10 +31,12 @@ author = 'Efabless'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-  'sphinxcontrib.wavedrom', # For rendering register diagrams.
-  'sphinx.ext.mathjax',
-  'sphinx.ext.todo',
-  'sphinx_wagtail_theme'
+    'sphinx.ext.ifconfig',
+    'sphinxcontrib.wavedrom', # For rendering register diagrams.
+    'sphinx.ext.mathjax',
+    'sphinx.ext.todo',
+    'sphinx_new_tab_link',
+    'sphinx_wagtail_theme',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -57,7 +59,7 @@ exclude_patterns = [
 master_doc = "index"
 today_fmt = "%Y-%m-%d %H:%M"
 todo_include_todos = False
-# numfig = True
+numfig = True
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -66,21 +68,24 @@ todo_include_todos = False
 html_theme = 'sphinx_wagtail_theme'
 html_show_sphinx = False # Hide footer Sphinx/Wagtail links; formatting is broken.
 html_last_updated_fmt = today_fmt
-html_favicon = 'i/Efabless-globe-favicon-192.png'
+html_favicon = '_static/i/Efabless-globe-favicon-192.png'
 html_static_path = ['_static']
 html_extra_path = [
-    '_static/efabless-logo-dark-bg.png', # Force Efabless logo build, so Wagtail theme can use it.
+    '_static/i/efabless-logo-dark-bg.png', # Force Efabless logo build, so Wagtail theme can use it.
 ]
+new_tab_link_show_external_link_icon = True
+
+html_css_files = ['css/custom.css']
 
 # These are options specifically for the Wagtail Theme.
 html_theme_options = dict(
-    project_name = "Caravel SoC and Harness",
-    logo = "efabless-logo-dark-bg.png", # I've found this needs to be in html_extra_path.
+    project_name = project, # Alternative title for header bar.
+    logo = "i/efabless-logo-dark-bg.png", # I've found this needs to be in html_extra_path.
     logo_alt = "Efabless",
     logo_url = "/",
     logo_width = 125,
     logo_height = 30,
-    github_url = "https://github.com/efabless/caravel_docs/blob/main/docs/",
+    github_url = "https://github.com/efabless/caravel_docs/blob/main/docs/source/",
     header_links = "Efabless.com|https://efabless.com, GitHub/efabless|https://github.com/efabless", # In top-right corner of header bar
     footer_links = ",".join([
         "Efabless.com|https://efabless.com",
