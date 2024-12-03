@@ -24,6 +24,12 @@
 Caravel Frame and SoC documentation
 ===================================
 
+.. todo::
+   Include a summary like what the caravel_datasheet_2 currently has.
+
+.. todo::
+   Don't have too much on this page because it is easily overlooked (i.e. can't be in the TOC??) just like it is for `CMSL <https://caravel-mgmt-soc-litex.readthedocs.io/en/latest/>`_. We also don't want it to be too long.
+
 
 What is Caravel?
 ----------------
@@ -49,6 +55,9 @@ Designing and fabricating an ASIC with `Efabless chipIgnite <https://efabless.co
    For more information about the different frames and options, see: `Which chipIgnite template should I use? <https://info.efabless.com/knowledge-base/whats-the-difference-between-caravel-caravan-and-openframe>`_
 
 
+.. todo::
+   Make it clear that there's a "minimal" start point that allows you to ignore most of the rest of the SoC stuff. Perhaps have a panel like this one that points to a quick-start or basic guide. Otherwise the SoC block diagram looks complicated. Maybe having a simple block diagram (that abstracts the SoC away) will go well adjacent the following die floorplan diagram...
+
 .. figure:: _static/i/caravel-floorplan.svg
       :name: caravel_floorplan
       :alt: Caravel Floorplan
@@ -56,11 +65,42 @@ Designing and fabricating an ASIC with `Efabless chipIgnite <https://efabless.co
 
       Caravel die floorplan
 
-Table of Contents
-=================
+.. todo::
+   Clarify that the user_project_wrapper is what you submit, but it's also a part of the overall frame that gets replaced by your own submission.
+
+
+How do I use this guide?
+------------------------
+
+It is intended that you can work through each of the following sections in order to learn the basics of Caravel and how to use it, before reaching more advanced topics.
+
+This guide covers general use of Caravel as a chip padring/harness for essential support of your design, as well as programming the Caravel SoC as a microcontroller and interfacing it with your design, and more-advanced concepts like analog connections.
+
 
 .. toctree::
    :maxdepth: 2
 
-   Features <caravel-features>
-
+   caravel-features
+   pinout
+   Getting Started <getting-started>
+   clocking
+   Firmware/Programming <firmware>
+   simulation
+   gpio
+   logic-analyzer
+   uart
+   wishbone
+   spi-master
+   counter-timer
+   housekeeping
+   irq
+   memory-map
+   analog
+   advanced
+   Bringup (Caravel Eval) <bringup>
+   caravan
+   caravel-mini
+   figures
+   specs
+   pcb
+   glossary

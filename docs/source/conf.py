@@ -58,7 +58,7 @@ exclude_patterns = [
 
 master_doc = "index"
 today_fmt = "%Y-%m-%d %H:%M"
-todo_include_todos = False
+todo_include_todos = True
 numfig = True
 
 

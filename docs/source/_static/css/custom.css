@@ -1,3 +1,7 @@
 body header.bg-primary {
     background-color: #181144 !important;
 }
+.admonition-todo {
+    border: 5px solid red;
+    box-shadow: 0 0 10px 10px #ff0 !important;
+}

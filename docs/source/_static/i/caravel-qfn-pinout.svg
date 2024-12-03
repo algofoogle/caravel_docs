@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1079.23493 971.90083">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #39b54a;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        font-family: Roboto-Medium, Roboto;
+        font-weight: 500;
+      }
+
+      .cls-2, .cls-5 {
+        font-size: 36px;
+      }
+
+      .cls-6 {
+        stroke-dasharray: 6.06303 6.06303;
+      }
+
+      .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: bevel;
+      }
+
+      .cls-6, .cls-7, .cls-8, .cls-11, .cls-12 {
+        stroke: #b3b3b3;
+        stroke-width: 3px;
+      }
+
+      .cls-13, .cls-14, .cls-15 {
+        fill: #fff;
+      }
+
+      .cls-13, .cls-16, .cls-17, .cls-18, .cls-19 {
+        font-size: 14px;
+      }
+
+      .cls-13, .cls-20, .cls-18 {
+        font-weight: 700;
+      }
+
+      .cls-13, .cls-18 {
+        font-family: RobotoMono-Bold, 'Roboto Mono';
+        font-variation-settings: 'wght' 700;
+      }
+
+      .cls-21 {
+        letter-spacing: .06773em;
+      }
+
+      .cls-22, .cls-20 {
+        font-size: 21px;
+      }
+
+      .cls-22, .cls-17 {
+        font-family: Roboto-Regular, Roboto;
+      }
+
+      .cls-23 {
+        letter-spacing: -.00802em;
+      }
+
+      .cls-7 {
+        stroke-dasharray: 6.06203 6.06203;
+      }
+
+      .cls-24 {
+        letter-spacing: .21763em;
+      }
+
+      .cls-16 {
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+      }
+
+      .cls-16, .cls-25, .cls-4 {
+        fill: red;
+      }
+
+      .cls-26 {
+        fill: #3fa9f5;
+      }
+
+      .cls-8 {
+        stroke-dasharray: 5.92447 5.92447;
+      }
+
+      .cls-20 {
+        font-family: Roboto-Bold, Roboto;
+      }
+
+      .cls-27 {
+        letter-spacing: 2.06138em;
+      }
+
+      .cls-4 {
+        font-size: 48px;
+      }
+
+      .cls-28 {
+        letter-spacing: -.04098em;
+      }
+
+      .cls-9 {
+        stroke-width: 5.60137px;
+      }
+
+      .cls-9, .cls-10 {
+        stroke: #000;
+      }
+
+      .cls-29 {
+        fill: #1b1464;
+      }
+
+      .cls-30 {
+        letter-spacing: -.00593em;
+      }
+
+      .cls-31 {
+        fill: blue;
+        font-family: Roboto-Black, Roboto;
+        font-weight: 800;
+      }
+
+      .cls-32 {
+        fill: #f0f;
+      }
+
+      .cls-10 {
+        stroke-width: 1.86713px;
+      }
+
+      .cls-33 {
+        fill: #f7931e;
+      }
+
+      .cls-34 {
+        letter-spacing: .46673em;
+      }
+
+      .cls-11 {
+        stroke-dasharray: 6.07735 6.07735;
+      }
+
+      .cls-35 {
+        letter-spacing: -.01001em;
+      }
+
+      .cls-19, .cls-15 {
+        font-family: RobotoMono-Regular, 'Roboto Mono';
+        font-variation-settings: 'wght' 400;
+      }
+
+      .cls-36 {
+        letter-spacing: -.00398em;
+      }
+
+      .cls-15 {
+        font-size: 18.67126px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1">
+    <rect class="cls-10" x="271.08162" y="613.46752" width="14.93758" height="14.93621"/>
+    <text class="cls-19" transform="translate(724.13611 653.76468)"><tspan x="0" y="0">37</tspan></text>
+    <text class="cls-19" transform="translate(724.13611 523.06351)"><tspan x="0" y="0">42</tspan></text>
+    <text class="cls-19" transform="translate(724.13611 444.64554)"><tspan x="0" y="0">45</tspan></text>
+    <rect class="cls-9" x="271.08162" y="310.9899" width="489.18804" height="489.18789"/>
+    <text class="cls-19" transform="translate(289.83337 626.91451)"><tspan x="0" y="0">11</tspan></text>
+    <text class="cls-19" transform="translate(289.83142 653.05427)"><tspan x="0" y="0">12</tspan></text>
+    <rect class="cls-10" x="271.08162" y="639.60574" width="14.93758" height="14.93758"/>
+    <text class="cls-19" transform="translate(724.13611 627.62406)"><tspan x="0" y="0">38</tspan></text>
+    <text class="cls-19" transform="translate(724.13611 601.48343)"><tspan x="0" y="0">39</tspan></text>
+    <rect class="cls-10" x="271.08162" y="404.34832" width="14.93758" height="14.93753"/>
+    <rect class="cls-10" x="271.08162" y="430.48655" width="14.93758" height="14.93753"/>
+    <rect class="cls-10" x="271.08162" y="508.90795" width="14.93758" height="14.93753"/>
+    <rect class="cls-10" x="271.08162" y="535.04617" width="14.93758" height="14.93621"/>
+    <rect class="cls-10" x="271.08162" y="561.18776" width="14.93758" height="14.93748"/>
+    <rect class="cls-10" x="271.08162" y="587.32598" width="14.93758" height="14.93748"/>
+    <text class="cls-19" transform="translate(291.15173 417.79666)"><tspan x="0" y="0">3</tspan></text>
+    <text class="cls-19" transform="translate(291.22595 443.93642)"><tspan x="0" y="0">4</tspan></text>
+    <text class="cls-19" transform="translate(290.89001 522.3557)"><tspan x="0" y="0">7</tspan></text>
+    <text class="cls-19" transform="translate(291.05408 548.49547)"><tspan x="0" y="0">8</tspan></text>
+    <text class="cls-19" transform="translate(291.03455 574.63497)"><tspan x="0" y="0">9</tspan></text>
+    <text class="cls-19" transform="translate(289.82947 600.77474)"><tspan x="0" y="0">10</tspan></text>
+    <rect class="cls-10" x="364.43673" y="310.9899" width="14.93738" height="14.93751"/>
+    <rect class="cls-10" x="338.29851" y="310.9899" width="14.93616" height="14.93751"/>
+    <rect class="cls-10" x="312.15682" y="310.9899" width="14.93758" height="14.93751"/>
+    <rect class="cls-10" x="416.71991" y="310.9899" width="14.93616" height="14.93751"/>
+    <rect class="cls-10" x="390.57822" y="310.9899" width="14.93758" height="14.93751"/>
+    <rect class="cls-10" x="442.85813" y="310.9899" width="14.93738" height="14.93751"/>
+    <text class="cls-19" transform="translate(724.13611 418.50296)"><tspan x="0" y="0">46</tspan></text>
+    <text class="cls-19" transform="translate(724.13611 575.34281)"><tspan x="0" y="0">40</tspan></text>
+    <text class="cls-19" transform="translate(724.13611 549.20218)"><tspan x="0" y="0">41</tspan></text>
+    <rect class="cls-10" x="745.33249" y="613.4671" width="14.93616" height="14.93621"/>
+    <rect class="cls-10" x="745.33249" y="639.60621" width="14.93616" height="14.93758"/>
+    <rect class="cls-10" x="745.33249" y="404.34813" width="14.93616" height="14.93753"/>
+    <rect class="cls-10" x="745.33249" y="430.48792" width="14.93616" height="14.93753"/>
+    <rect class="cls-10" x="745.33249" y="508.90729" width="14.93616" height="14.93753"/>
+    <rect class="cls-10" x="745.33249" y="535.04774" width="14.93616" height="14.93621"/>
+    <rect class="cls-10" x="745.33249" y="561.18689" width="14.93616" height="14.93748"/>
+    <rect class="cls-10" x="745.33249" y="587.32668" width="14.93616" height="14.93748"/>
+    <rect class="cls-10" x="364.43673" y="785.24066" width="14.93738" height="14.93753"/>
+    <rect class="cls-10" x="338.29851" y="785.24066" width="14.93616" height="14.93753"/>
+    <rect class="cls-10" x="312.15682" y="785.24066" width="14.93758" height="14.93753"/>
+    <rect class="cls-10" x="416.71991" y="785.24066" width="14.93616" height="14.93753"/>
+    <rect class="cls-10" x="390.57822" y="785.24066" width="14.93758" height="14.93753"/>
+    <rect class="cls-10" x="442.85813" y="785.24066" width="14.93738" height="14.93753"/>
+    <g>
+      <rect class="cls-29" x="320.29248" y="721.19411" width="198.47754" height="29.03223" rx="6" ry="6"/>
+      <text class="cls-15" transform="translate(324.29236 741.16702)"><tspan x="0" y="0">exposed pad = VSS</tspan></text>
+    </g>
+    <g>
+      <polyline class="cls-12" points="315.4259 752.36648 315.4259 755.36648 318.4259 755.36648"/>
+      <line class="cls-7" x1="324.48795" y1="755.36648" x2="709.42712" y2="755.36648"/>
+      <polyline class="cls-12" points="712.45813 755.36648 715.45813 755.36648 715.45813 752.36648"/>
+      <line class="cls-6" x1="715.45813" y1="746.30343" x2="715.45813" y2="361.30126"/>
+      <polyline class="cls-12" points="715.45813 358.26974 715.45813 355.26974 712.45813 355.26974"/>
+      <line class="cls-11" x1="706.3808" y1="355.26974" x2="356.93298" y2="355.26974"/>
+      <polyline class="cls-12" points="353.89429 355.26974 350.89429 355.26974 348.77298 357.39107"/>
+      <polyline class="cls-8" points="344.58374 361.58031 315.4259 390.73824 315.4259 749.40426"/>
+    </g>
+    <rect class="cls-10" x="271.08162" y="744.16542" width="14.93758" height="14.93748"/>
+    <rect class="cls-10" x="271.08162" y="665.74402" width="14.93758" height="14.93748"/>
+    <rect class="cls-10" x="271.08162" y="691.8856" width="14.93758" height="14.93621"/>
+    <rect class="cls-10" x="271.08162" y="718.02378" width="14.93758" height="14.93753"/>
+    <rect class="cls-10" x="495.13784" y="310.9899" width="14.93616" height="14.93751"/>
+    <rect class="cls-10" x="468.99636" y="310.9899" width="14.93738" height="14.93751"/>
+    <rect class="cls-10" x="547.41775" y="310.9899" width="14.93738" height="14.93751"/>
+    <rect class="cls-10" x="521.27627" y="310.9899" width="14.93738" height="14.93751"/>
+    <rect class="cls-10" x="573.55598" y="310.9899" width="14.93616" height="14.93751"/>
+    <rect class="cls-10" x="495.13784" y="785.24066" width="14.93616" height="14.93753"/>
+    <rect class="cls-10" x="468.99636" y="785.24066" width="14.93738" height="14.93753"/>
+    <rect class="cls-10" x="547.41775" y="785.24066" width="14.93738" height="14.93753"/>
+    <rect class="cls-10" x="521.27627" y="785.24066" width="14.93738" height="14.93753"/>
+    <rect class="cls-10" x="573.55598" y="785.24066" width="14.93616" height="14.93753"/>
+    <rect class="cls-10" x="745.33249" y="744.16542" width="14.93616" height="14.93748"/>
+    <rect class="cls-10" x="745.33249" y="665.74605" width="14.93616" height="14.93748"/>
+    <rect class="cls-10" x="745.33249" y="691.88647" width="14.93616" height="14.93621"/>
+    <rect class="cls-10" x="745.33249" y="718.0256" width="14.93616" height="14.93753"/>
+    <text class="cls-19" transform="translate(289.83142 757.61392)"><tspan x="0" y="0">16</tspan></text>
+    <text class="cls-19" transform="translate(289.83142 679.19402)"><tspan x="0" y="0">13</tspan></text>
+    <text class="cls-19" transform="translate(289.83142 705.33379)"><tspan x="0" y="0">14</tspan></text>
+    <text class="cls-19" transform="translate(289.82947 731.47356)"><tspan x="0" y="0">15</tspan></text>
+    <text class="cls-19" transform="translate(724.13611 755.72524)"><tspan x="0" y="0">33</tspan></text>
+    <text class="cls-19" transform="translate(724.13611 732.18265)"><tspan x="0" y="0">34</tspan></text>
+    <text class="cls-19" transform="translate(724.13611 706.04398)"><tspan x="0" y="0">35</tspan></text>
+    <text class="cls-19" transform="translate(724.13611 679.90335)"><tspan x="0" y="0">36</tspan></text>
+    <rect class="cls-10" x="651.97717" y="785.24066" width="14.93758" height="14.93753"/>
+    <rect class="cls-10" x="651.97717" y="310.9899" width="14.93758" height="14.93751"/>
+    <rect class="cls-10" x="599.69746" y="310.9899" width="14.93758" height="14.93751"/>
+    <rect class="cls-10" x="625.83589" y="310.9899" width="14.93616" height="14.93751"/>
+    <rect class="cls-10" x="599.69746" y="785.24066" width="14.93758" height="14.93753"/>
+    <rect class="cls-10" x="625.83589" y="785.24066" width="14.93616" height="14.93753"/>
+    <rect class="cls-10" x="271.08162" y="456.62819" width="14.93758" height="14.93616"/>
+    <rect class="cls-10" x="271.08162" y="482.76641" width="14.93758" height="14.93748"/>
+    <text class="cls-19" transform="translate(291.09119 470.07618)"><tspan x="0" y="0">5</tspan></text>
+    <text class="cls-19" transform="translate(290.9408 496.21594)"><tspan x="0" y="0">6</tspan></text>
+    <text class="cls-19" transform="translate(724.13611 470.78226)"><tspan x="0" y="0">44</tspan></text>
+    <text class="cls-19" transform="translate(724.13611 496.92288)"><tspan x="0" y="0">43</tspan></text>
+    <rect class="cls-10" x="745.33249" y="456.62839" width="14.93616" height="14.93616"/>
+    <rect class="cls-10" x="745.33249" y="482.76752" width="14.93616" height="14.93748"/>
+    <rect class="cls-10" x="704.25708" y="785.24066" width="14.93616" height="14.93753"/>
+    <rect class="cls-10" x="678.1156" y="785.24066" width="14.93758" height="14.93753"/>
+    <rect class="cls-10" x="745.33249" y="352.06856" width="14.93616" height="14.93751"/>
+    <rect class="cls-10" x="745.33249" y="378.20901" width="14.93616" height="14.93618"/>
+    <rect class="cls-10" x="271.08162" y="352.06856" width="14.93758" height="14.93751"/>
+    <rect class="cls-10" x="271.08162" y="378.20679" width="14.93758" height="14.93618"/>
+    <rect class="cls-10" x="704.25708" y="310.9899" width="14.93616" height="14.93751"/>
+    <rect class="cls-10" x="678.1156" y="310.9899" width="14.93758" height="14.93751"/>
+    <text class="cls-19" transform="translate(289.83142 365.51731)"><tspan x="0" y="0">1</tspan></text>
+    <text class="cls-19" transform="translate(291.11462 391.65688)"><tspan x="0" y="0">2</tspan></text>
+    <text class="cls-19" transform="translate(572.62401 779.41982)"><tspan x="0" y="0">27</tspan></text>
+    <text class="cls-19" transform="translate(598.76401 779.41994)"><tspan x="0" y="0">28</tspan></text>
+    <text class="cls-19" transform="translate(363.50369 779.41988)"><tspan x="0" y="0">19</tspan></text>
+    <text class="cls-19" transform="translate(389.64371 779.42)"><tspan x="0" y="0">20</tspan></text>
+    <text class="cls-19" transform="translate(468.06421 779.41988)"><tspan x="0" y="0">23</tspan></text>
+    <text class="cls-19" transform="translate(494.20398 779.42025)"><tspan x="0" y="0">24</tspan></text>
+    <text class="cls-19" transform="translate(520.34399 779.42006)"><tspan x="0" y="0">25</tspan></text>
+    <text class="cls-19" transform="translate(546.48399 779.42068)"><tspan x="0" y="0">26</tspan></text>
+    <text class="cls-19" transform="translate(703.32379 779.42049)"><tspan x="0" y="0">32</tspan></text>
+    <text class="cls-19" transform="translate(624.90402 779.42055)"><tspan x="0" y="0">29</tspan></text>
+    <text class="cls-19" transform="translate(651.04402 779.42067)"><tspan x="0" y="0">30</tspan></text>
+    <text class="cls-19" transform="translate(677.18402 779.41982)"><tspan x="0" y="0">31</tspan></text>
+    <text class="cls-19" transform="translate(415.78372 779.42013)"><tspan x="0" y="0">21</tspan></text>
+    <text class="cls-19" transform="translate(441.92422 779.41976)"><tspan x="0" y="0">22</tspan></text>
+    <text class="cls-19" transform="translate(311.224 779.41988)"><tspan x="0" y="0">17</tspan></text>
+    <text class="cls-19" transform="translate(337.36371 779.41976)"><tspan x="0" y="0">18</tspan></text>
+    <text class="cls-19" transform="translate(572.62401 342.09725)"><tspan x="0" y="0">54</tspan></text>
+    <text class="cls-19" transform="translate(598.76401 342.09737)"><tspan x="0" y="0">53</tspan></text>
+    <text class="cls-19" transform="translate(363.50369 342.0973)"><tspan x="0" y="0">62</tspan></text>
+    <text class="cls-19" transform="translate(389.64371 342.09743)"><tspan x="0" y="0">61</tspan></text>
+    <text class="cls-19" transform="translate(468.06421 342.09731)"><tspan x="0" y="0">58</tspan></text>
+    <text class="cls-19" transform="translate(494.20398 342.09768)"><tspan x="0" y="0">57</tspan></text>
+    <text class="cls-19" transform="translate(520.34399 342.09749)"><tspan x="0" y="0">56</tspan></text>
+    <text class="cls-19" transform="translate(546.48399 342.0981)"><tspan x="0" y="0">55</tspan></text>
+    <text class="cls-19" transform="translate(703.32379 342.09792)"><tspan x="0" y="0">49</tspan></text>
+    <text class="cls-19" transform="translate(624.90402 342.09798)"><tspan x="0" y="0">52</tspan></text>
+    <text class="cls-19" transform="translate(651.04402 342.0981)"><tspan x="0" y="0">51</tspan></text>
+    <text class="cls-19" transform="translate(677.18402 342.09725)"><tspan x="0" y="0">50</tspan></text>
+    <text class="cls-19" transform="translate(415.78372 342.09756)"><tspan x="0" y="0">60</tspan></text>
+    <text class="cls-19" transform="translate(441.92422 342.09719)"><tspan x="0" y="0">59</tspan></text>
+    <text class="cls-19" transform="translate(311.224 342.0973)"><tspan x="0" y="0">64</tspan></text>
+    <text class="cls-19" transform="translate(337.36371 342.09717)"><tspan x="0" y="0">63</tspan></text>
+    <text class="cls-19" transform="translate(724.13611 392.36429)"><tspan x="0" y="0">47</tspan></text>
+    <text class="cls-19" transform="translate(724.13611 363.62839)"><tspan x="0" y="0">48</tspan></text>
+    <g>
+      <rect class="cls-1" x="648.44873" y="201.68581" width="23.77051" height="100.41504" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(664.42548 298.10062) rotate(-90)"><tspan x="0" y="0">mprj_io[15]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="596.16895" y="201.68581" width="23.77051" height="100.41504" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(612.14548 298.10062) rotate(-90)"><tspan x="0" y="0">mprj_io[16]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="570.02881" y="201.68581" width="23.77051" height="100.41504" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(586.00549 298.10062) rotate(-90)"><tspan x="0" y="0">mprj_io[17]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="543.88916" y="201.68581" width="23.77051" height="100.41504" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(559.86551 298.10062) rotate(-90)"><tspan x="0" y="0">mprj_io[18]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="491.60938" y="201.68581" width="23.77051" height="100.41504" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(507.58575 298.10062) rotate(-90)"><tspan x="0" y="0">mprj_io[19]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="465.46924" y="201.68581" width="23.77051" height="100.41504" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(481.44577 298.10062) rotate(-90)"><tspan x="0" y="0">mprj_io[20]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="439.3291" y="201.68581" width="23.77051" height="100.41504" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(455.30579 298.10062) rotate(-90)"><tspan x="0" y="0">mprj_io[21]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="413.18945" y="201.68581" width="23.77051" height="100.41504" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(429.1658 298.10062) rotate(-90)"><tspan x="0" y="0">mprj_io[22]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="387.04932" y="201.68581" width="23.77051" height="100.41504" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(403.02582 298.10062) rotate(-90)"><tspan x="0" y="0">mprj_io[23]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-29" x="517.74902" y="252.09402" width="23.77051" height="50.00684" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(533.72552 298.10062) rotate(-90)"><tspan x="0" y="0">vssio</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-29" x="622.30908" y="252.09402" width="23.77051" height="50.00684" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(638.28546 298.10062) rotate(-90)"><tspan x="0" y="0">vssa1</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="674.58887" y="809.68239" width="23.77051" height="92.01367" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(690.56543 897.69633) rotate(-90)"><tspan x="0" y="0">mprj_io[0]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="700.72852" y="809.68239" width="23.77051" height="92.01367" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(716.7052 897.69633) rotate(-90)"><tspan x="0" y="0">mprj_io[1]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="674.58887" y="919.68239" width="23.77051" height="41.60547" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(690.56543 957.28812) rotate(-90)"><tspan x="0" y="0">JTAG</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-26" x="700.72852" y="919.68239" width="23.77051" height="33.2041" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(716.7052 948.88675) rotate(-90)"><tspan x="0" y="0">SDO</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="769.88232" y="740.63747" width="92.01367" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(773.8822 756.61391)"><tspan x="0" y="0">mprj_io[2]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="769.88232" y="714.49685" width="92.01367" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(773.8822 730.47356)"><tspan x="0" y="0">mprj_io[3]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="769.88232" y="688.3572" width="92.01367" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(773.8822 704.3338)"><tspan x="0" y="0">mprj_io[4]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="769.88232" y="662.21755" width="92.01367" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(773.8822 678.19402)"><tspan x="0" y="0">mprj_io[5]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="769.88232" y="636.0779" width="92.01367" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(773.8822 652.05427)"><tspan x="0" y="0">mprj_io[6]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-29" x="769.88232" y="609.93825" width="50.00684" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(773.8822 625.91451)"><tspan x="0" y="0">vssa1</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-29" x="769.88232" y="583.79812" width="50.00684" height="23.771" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(773.8822 599.77474)"><tspan x="0" y="0">vssd1</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-25" x="769.88232" y="557.65847" width="50.00684" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(773.8822 573.63497)"><tspan x="0" y="0">vdda1</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="769.88232" y="531.51882" width="92.01367" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(773.8822 547.49548)"><tspan x="0" y="0">mprj_io[7]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="769.88232" y="505.37917" width="92.01367" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(773.8822 521.3557)"><tspan x="0" y="0">mprj_io[8]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="769.88232" y="479.23952" width="92.01367" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(773.8822 495.21594)"><tspan x="0" y="0">mprj_io[9]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="769.88232" y="453.09939" width="100.41504" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(773.8822 469.07617)"><tspan x="0" y="0">mprj_io[10]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="769.88232" y="426.95974" width="100.41504" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(773.8822 442.93642)"><tspan x="0" y="0">mprj_io[11]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-26" x="879.88232" y="740.63747" width="33.2041" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(883.8822 756.61391)"><tspan x="0" y="0">SDI</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-26" x="879.88232" y="714.49685" width="33.2041" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(883.8822 730.47356)"><tspan x="0" y="0">CSB</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-26" x="879.88232" y="688.3572" width="33.40918" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(883.8822 704.3338)"><tspan x="0" y="0">SCK</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="879.88232" y="662.21755" width="58.4082" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(883.8822 678.19402)"><tspan x="0" y="0">ser_rx</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="879.88232" y="636.0779" width="58.4082" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(883.8822 652.05427)"><tspan x="0" y="0">ser_tx</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="879.88232" y="531.51882" width="33.2041" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(883.8822 547.49548)"><tspan x="0" y="0">irq</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="879.88232" y="505.37917" width="92.01318" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(883.8822 521.3557)"><tspan x="0" y="0">flash2_csb</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="879.88232" y="479.23952" width="92.01318" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(883.8822 495.21594)"><tspan x="0" y="0">flash2_sck</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="879.88232" y="453.09939" width="92.01318" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(883.8822 469.07617)"><tspan x="0" y="0">flash2_io0</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="879.88232" y="426.95974" width="92.01318" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(883.8822 442.93642)"><tspan x="0" y="0">flash2_io1</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="769.88232" y="400.82009" width="100.41504" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(773.8822 416.79666)"><tspan x="0" y="0">mprj_io[12]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-25" x="769.88232" y="374.68044" width="50.00684" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(773.8822 390.65688)"><tspan x="0" y="0">vdda1</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="769.88232" y="348.54079" width="100.41504" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(773.8822 364.51731)"><tspan x="0" y="0">mprj_io[13]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="879.88232" y="400.82009" width="41.60547" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(883.8822 416.79666)"><tspan x="0" y="0">irq2</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="879.88232" y="348.54079" width="41.60547" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(883.8822 364.51731)"><tspan x="0" y="0">trap</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-33" x="700.72852" y="252.09402" width="23.77051" height="50.00684" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(716.7052 298.10063) rotate(-90)"><tspan x="0" y="0">vccd1</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="674.58887" y="201.68581" width="23.77051" height="100.41504" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(690.56546 298.10062) rotate(-90)"><tspan x="0" y="0">mprj_io[14]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="648.44873" y="91.68532" width="23.77051" height="100.41504" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(664.42548 188.10061) rotate(-90)"><tspan x="0" y="0">user_clock2</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="674.58887" y="100.08669" width="23.77051" height="92.01367" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(690.56546 188.10061) rotate(-90)"><tspan x="0" y="0">mprj_clock</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-29" x="387.04932" y="809.68239" width="23.77051" height="41.60547" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(403.02582 847.28812) rotate(-90)"><tspan x="0" y="0">vssa</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="413.18945" y="809.68239" width="23.77051" height="58.4082" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(429.1658 864.09086) rotate(-90)"><tspan x="0" y="0">resetb</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="439.3291" y="809.68239" width="23.77051" height="50.00684" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(455.30579 855.68949) rotate(-90)"><tspan x="0" y="0">clock</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-29" x="465.46924" y="809.68239" width="23.77051" height="41.60547" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(481.44577 847.28812) rotate(-90)"><tspan x="0" y="0">vssd</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="491.60938" y="809.68239" width="23.77051" height="83.6123" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(507.58575 889.29496) rotate(-90)"><tspan x="0" y="0">flash_csb</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="517.74902" y="809.68239" width="23.77051" height="83.6123" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(533.72552 889.29496) rotate(-90)"><tspan x="0" y="0">flash_clk</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="543.88867" y="809.68239" width="23.77051" height="83.6123" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(559.86548 889.29496) rotate(-90)"><tspan x="0" y="0">flash_io0</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="570.02881" y="809.68239" width="23.77051" height="83.6123" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(586.00549 889.29496) rotate(-90)"><tspan x="0" y="0">flash_io1</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="596.16895" y="809.68239" width="23.77051" height="41.60547" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(612.14551 847.28812) rotate(-90)"><tspan x="0" y="0">gpio</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-29" x="622.30908" y="809.68239" width="23.77051" height="50.00684" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(638.28546 855.68949) rotate(-90)"><tspan x="0" y="0">vssio</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-25" x="648.44873" y="809.68239" width="23.77051" height="41.60547" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(664.42548 847.28812) rotate(-90)"><tspan x="0" y="0">vdda</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="360.90918" y="201.68581" width="23.77051" height="100.41504" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(376.8858 298.10062) rotate(-90)"><tspan x="0" y="0">mprj_io[24]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="162.22656" y="374.68044" width="100.41504" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(166.22644 390.65688)"><tspan x="0" y="0">mprj_io[25]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="162.22656" y="400.82009" width="100.41504" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(166.22644 416.79666)"><tspan x="0" y="0">mprj_io[26]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="162.22656" y="426.95974" width="100.41504" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(166.22644 442.93642)"><tspan x="0" y="0">mprj_io[27]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="162.22656" y="453.09939" width="100.41504" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(166.22644 469.07618)"><tspan x="0" y="0">mprj_io[28]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="162.22656" y="479.23952" width="100.41504" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(166.22644 495.21593)"><tspan x="0" y="0">mprj_io[29]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="162.22656" y="505.37917" width="100.41504" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(166.22644 521.3557)"><tspan x="0" y="0">mprj_io[30]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="162.22656" y="531.51882" width="100.41504" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(166.22644 547.49547)"><tspan x="0" y="0">mprj_io[31]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="162.22656" y="609.93825" width="100.41504" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(166.22644 625.91451)"><tspan x="0" y="0">mprj_io[32]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="162.22656" y="636.0779" width="100.41504" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(166.22644 652.05426)"><tspan x="0" y="0">mprj_io[33]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="162.22656" y="662.21755" width="100.41504" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(166.22644 678.19402)"><tspan x="0" y="0">mprj_io[34]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="162.22656" y="688.3572" width="100.41504" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(166.22644 704.3338)"><tspan x="0" y="0">mprj_io[35]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="162.22656" y="714.49685" width="100.41504" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(166.22644 730.47356)"><tspan x="0" y="0">mprj_io[36]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-1" x="162.22656" y="740.63747" width="100.41504" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(166.22644 756.61391)"><tspan x="0" y="0">mprj_io[37]</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-33" x="334.76953" y="809.68239" width="23.77051" height="41.60547" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(350.74585 847.28812) rotate(-90)"><tspan x="0" y="0">vccd</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-25" x="308.62939" y="809.68239" width="23.77051" height="50.00684" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(324.6059 855.68949) rotate(-90)"><tspan x="0" y="0">vddio</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-29" x="212.63477" y="583.79812" width="50.00684" height="23.771" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(216.63464 599.77474)"><tspan x="0" y="0">vssd2</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-25" x="212.63477" y="557.65847" width="50.00684" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(216.63464 573.63497)"><tspan x="0" y="0">vdda2</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-29" x="212.63477" y="348.54079" width="50.00684" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-18" transform="translate(216.63464 364.51731)"><tspan x="0" y="0">vssa2</tspan></text>
+      <text class="cls-13" transform="translate(216.63464 364.51731)"><tspan x="0" y="0">vssa2</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="85.83203" y="609.93825" width="66.80957" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(89.83191 625.91451)"><tspan x="0" y="0">spi_sck</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="85.83203" y="636.0779" width="66.80957" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(89.83191 652.05426)"><tspan x="0" y="0">spi_csb</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="85.83203" y="662.21755" width="66.80957" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(89.83191 678.19402)"><tspan x="0" y="0">spi_sdi</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="85.83203" y="688.3572" width="66.80957" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(89.83191 704.3338)"><tspan x="0" y="0">spi_sdo</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="69.0293" y="714.49685" width="83.6123" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(73.02917 730.47356)"><tspan x="0" y="0">flash_io2</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-32" x="69.0293" y="740.63747" width="83.6123" height="23.77051" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(73.02917 756.61391)"><tspan x="0" y="0">flash_io3</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-25" x="308.62939" y="252.09402" width="23.77051" height="50.00684" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(324.6059 298.10063) rotate(-90)"><tspan x="0" y="0">vddio</tspan></text>
+    </g>
+    <g>
+      <rect class="cls-33" x="334.76953" y="252.09402" width="23.77051" height="50.00684" rx="6" ry="6"/>
+      <text class="cls-13" transform="translate(350.74585 298.10063) rotate(-90)"><tspan x="0" y="0">vccd2</tspan></text>
+    </g>
+    <text class="cls-18" transform="translate(376.8858 838.88676) rotate(-90)"><tspan x="0" y="0">N/C</tspan></text>
+    <text transform="translate(446.9278 470.87815)"><tspan class="cls-2"><tspan x="0" y="0">efabless</tspan></tspan><tspan class="cls-5"><tspan class="cls-31" x="-56.10938" y="43.2002">sky130 </tspan><tspan class="cls-3" x="72.17578" y="43.2002">Caravel</tspan></tspan><tspan class="cls-2"><tspan x="7.28613" y="86.3999">QFN-64</tspan></tspan><tspan class="cls-4"><tspan x="-40.69336" y="187.2002">TOP VIEW</tspan></tspan></text>
+    <circle cx="319.62561" cy="359.53732" r="7.46875"/>
+  </g>
+  <g id="Layer_3">
+    <g>
+      <g>
+        <rect class="cls-14" x="726.74826" y="12.36958" width="317.20752" height="138.95947" rx="13.5498" ry="13.5498"/>
+        <path d="M1030.40561,13.14757c7.0426,0,12.77209,5.72959,12.77209,12.77223v111.85922c0,7.04259-5.72949,12.77219-12.77209,12.77219h-290.10736c-7.0426,0-12.77222-5.7296-12.77222-12.77219V25.91979c0-7.04264,5.72961-12.77223,12.77222-12.77223h290.10736M1030.40561,11.59134h-290.10736c-7.91339,0-14.32843,6.41505-14.32843,14.32846v111.85922c0,7.91336,6.41504,14.32841,14.32843,14.32841h290.10736c7.91333,0,14.32837-6.41505,14.32837-14.32841V25.91979c0-7.91341-6.41504-14.32846-14.32837-14.32846h0Z"/>
+      </g>
+      <g>
+        <rect class="cls-29" x="807.30322" y="31.26345" width="33.2041" height="23.77051" rx="6" ry="6"/>
+        <text class="cls-13" transform="translate(811.30328 47.24001)"><tspan x="0" y="0">GND</tspan></text>
+      </g>
+      <g>
+        <rect class="cls-1" x="748.49365" y="57.4031" width="92.01367" height="23.77051" rx="6" ry="6"/>
+        <text class="cls-13" transform="translate(752.49371 73.37978)"><tspan x="0" y="0">mprj_io[*]</tspan></text>
+      </g>
+      <g>
+        <rect class="cls-32" x="798.90186" y="83.54275" width="41.60547" height="23.77051" rx="6" ry="6"/>
+        <text class="cls-13" transform="translate(802.90192 99.51955)"><tspan x="0" y="0">MGMT</tspan></text>
+      </g>
+      <g>
+        <rect class="cls-26" x="790.50049" y="109.68288" width="50.00684" height="23.77051" rx="6" ry="6"/>
+        <text class="cls-13" transform="translate(794.50055 125.65932)"><tspan x="0" y="0">HKSPI</tspan></text>
+      </g>
+      <text class="cls-17" transform="translate(853.33588 47.24001)"><tspan x="0" y="0">GND</tspan></text>
+      <text class="cls-17" transform="translate(853.33588 73.37978)"><tspan x="0" y="0">User project GPIOs</tspan></text>
+      <text class="cls-17" transform="translate(853.33588 99.51955)"><tspan x="0" y="0">Management SoC functions</tspan></text>
+      <text class="cls-17" transform="translate(853.33588 125.65932)"><tspan x="0" y="0">Housekeeping SPI slave</tspan></text>
+    </g>
+    <g>
+      <text class="cls-20" transform="translate(271.08153 157.77523)"><tspan x="0" y="0">NOTE: All digital pins are 3.3V logic</tspan></text>
+      <g>
+        <rect class="cls-14" x="273.20947" y="11.91823" width="331.41602" height="112.12793" rx="12.20654" ry="12.20654"/>
+        <path d="M592.4187,12.91817c6.17932,0,11.2066,5.02728,11.2066,11.2066v87.71472c0,6.17932-5.02728,11.20659-11.2066,11.20659h-307.0025c-6.17932,0-11.20657-5.02727-11.20657-11.20659V24.12476c0-6.17932,5.02725-11.2066,11.20657-11.2066h307.0025M592.4187,10.91817h-307.0025c-7.29376,0-13.20657,5.91277-13.20657,13.2066v87.71472c0,7.29382,5.91281,13.20659,13.20657,13.20659h307.0025c7.29382,0,13.2066-5.91277,13.2066-13.20659V24.12476c0-7.29382-5.91278-13.2066-13.2066-13.2066h0Z"/>
+      </g>
+      <g>
+        <rect class="cls-33" x="313.62646" y="82.01247" width="50.00684" height="23.77051" rx="6" ry="6"/>
+        <text class="cls-13" transform="translate(317.62656 97.98903)"><tspan x="0" y="0">+1.8V</tspan></text>
+      </g>
+      <g>
+        <rect class="cls-25" x="313.62646" y="55.87282" width="50.00684" height="23.77051" rx="6" ry="6"/>
+        <text class="cls-13" transform="translate(317.62656 71.84926)"><tspan x="0" y="0">+3.3V</tspan></text>
+      </g>
+      <text class="cls-17" transform="translate(376.46188 97.98903)"><tspan x="0" y="0">Core digital power supply</tspan></text>
+      <text class="cls-17" transform="translate(376.46188 71.84926)"><tspan x="0" y="0">Analog/digital IO power supply</tspan></text>
+      <text class="cls-22" transform="translate(297.66977 40.69839)"><tspan x="0" y="0">sky130 typical power domains</tspan></text>
+    </g>
+    <text class="cls-22" transform="translate(0 899.54861)"><tspan class="cls-21" x="0" y="0">	</tspan><tspan x="6.62109" y="0">Package size:</tspan><tspan class="cls-34" x="135" y="0">	</tspan><tspan x="150" y="0">9mm × 9mm</tspan><tspan class="cls-24" x="0" y="25.2002">	</tspan><tspan x="9.76904" y="25.2002">Exposed pad:</tspan><tspan class="cls-34" x="135" y="25.2002">	</tspan><tspan x="150" y="25.2002">7.63mm × 7.63mm</tspan><tspan class="cls-27" x="0" y="50.40039">	</tspan><tspan x="48.48779" y="50.40039">Pin pitch:</tspan><tspan class="cls-34" x="135" y="50.40039">	</tspan><tspan x="150" y="50.40039">0.5mm</tspan></text>
+    <text class="cls-16" transform="translate(927.28271 358.06856)"><tspan x="0" y="0">??</tspan><tspan class="cls-28" x="11.36768" y="0"> </tspan><tspan x="13.76172" y="0">TRM s</tspan><tspan class="cls-23" x="48.01904" y="0">a</tspan><tspan class="cls-30" x="54.65479" y="0">y</tspan><tspan x="61.16553" y="0">s not </tspan><tspan class="cls-23" x="92.73486" y="0">a</tspan><tspan class="cls-36" x="99.37061" y="0">v</tspan><tspan x="106.04834" y="0">ailable;</tspan><tspan x="0" y="16.7998">see: </tspan><tspan class="cls-35" x="25.4375" y="16.7998">r</tspan><tspan x="29.87549" y="16.7998">eg_clk_out_dest</tspan></text>
+  </g>
+</svg>

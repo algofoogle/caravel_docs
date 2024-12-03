@@ -21,30 +21,45 @@
 Features of Caravel
 ===================
 
+.. todo::
+    Include a general summary in here of each of the features, then link to their respective sections, as this page sort of does: https://caravel-mgmt-soc-litex.readthedocs.io/en/latest/
+
 Caravel includes the following key features:
 
 General
 -------
 
-*   **Housekeeping SPI (HKSPI)** interface.
+These features are universally available to any chip based on the Caravel frame, even without specific use of the **Management SoC**.
+
+*   **10mm² "user project wrapper" design area**.
+*   **Housekeeping SPI (HKSPI)** interface for an external SPI controller to assert debugging control over certain base configuration, debugging, and clocking of the chip.
 *   **38 GPIOs**:
 
     *   Can be configured (and reconfigured via CPU firmware or HKSPI) to function as outputs, bidirectional, or inputs (including optional pull-up or pull-down).
-    *   33 support power-on default configuration specified by the designer.
+    *   33 support power-on default configuration, specified in silicon by the designer.
     *   29 support direct pad connections for analog signals [#f1]_.
     *   **For Caravan**: 11 are "bare analog" pads without GPIO circuitry and without ESD protection.
-*   **DLL (similar to a PLL) for clocking control**, delivering 2 independently-configurable clock sources, and the option to output clocks directly on GPIO pins.
+*   **Dedicated clock input pin** (optional).
+*   **DLL (similar to a PLL) for clocking control** (or available to be used as an internal "DCO" ring-oscillator clock), delivering 2 independently-configurable clock sources, and the option to output clocks directly on GPIO pins.
+*   **POR (Power-On Reset) module**.
 *   **SPI pass-through** interface able to be driven via HKSPI to take control (for reading/writing) of a firmware SPI ROM connected to the Management SoC.
+*   **Support for digital, analog, and mixed-signal projects**.
 *   **4 power domains**; two intended as nominal 1.8V digital supplies, two intended as analog supplies in the range 1.8V to 5.5V.
+
+.. note::
+
+    The DLL/DCO is inactive by default, passing the optional dedicated clock input directly through to the user project wrapper. If the DLL/DCO is to be used, it must be explicitly enabled via HKSPI or firmware running on the **Management SoC**. For more information, see the section on **Clocking, DLL and DCO**.
+
 
 
 Management SoC
 --------------
 
-The Management SoC's RISC-V CPU (RV32I) is able to interface with your design in the user project wrapper, and externally to the chip.
+The Management SoC's RISC-V CPU (RV32I) is built into the die area, adjacent the user project wrapper, and can be interfaced with your design, as well as externally to the chip.
 
-The SoC includes the following peripherals and capabilities that can be optionally enabled/disabled on subsets of the GPIO pins, to make the SoC useful both as a general-purpose microcontroller and a specialized test/debug interface for your design:
+The SoC is generated using Litex and includes the following peripherals and capabilities that can be optionally enabled/disabled on subsets of the GPIO pins, to make the SoC useful both as a general-purpose microcontroller and a specialized test/debug interface for your design:
 
+*   **VexRiscv core**: VexRiscv minimal+debug configuration.
 *   **GPIO control**: Ability to reconfigure the 38 GPIOs (**27 for Caravan**), including taking over GPIOs as "management mode".
 *   **Logic Analyzer**: 128 internal IO pins that can optionally be connected with your design in the user project wrapper.
 *   **Wishbone master**: 32-bit Classic-Wishbone-based memory map expansion of the CPU.
@@ -55,6 +70,16 @@ The SoC includes the following peripherals and capabilities that can be optional
 *   **Dedicated firmware ROM SPI master** for XIP loading of firmware code from an external SPI memory into a local 16-word (64-byte) instruction cache.
 *   **Counter-timers**.
 *   **Single management GPIO pin**.
+*   **Dedicated power domain**.
+
+.. note::
+
+    If you don't intend to make use of the Management SoC at all, you can simply choose to not connect to its ports in the users project wrapper, and you can optionally tie its ``RESETb`` signal low externally to hold it in reset.
+
+.. todo::
+
+    Need a block diagram to show separation between SoC/chip and its pins on either side.
+
 
 .. rubric:: Footnotes
 
