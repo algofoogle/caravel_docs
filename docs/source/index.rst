@@ -34,20 +34,21 @@ Caravel Frame and SoC documentation
 What is Caravel?
 ----------------
 
+Designing and fabricating an ASIC with `Efabless chipIgnite <https://efabless.com/chipignite>`_ requires that you use an existing supported template (or "frame"), and our free and open-source **Caravel** is recommended as the most popular, feature-rich, and production-ready template. The chipIgnite submission process automatically integrates your user project design area into the frame, so you don't have to worry about it.
+
 .. raw:: html
 
    <p>
-   With the free and open-source <strong>Caravel</strong>, you have a ready-to-use chip harness for creating your own ASIC design and getting it fabricated for prototype or production purposes. It includes a blank silicon <strong>design area of 10mm<sup>2</sup></strong> and optional on-chip microcontroller/test framework. You can use it whether you are creating a proprietary/private chip, one for commercial purposes, or an open-source design.
+   With <strong>Caravel</strong>, you have a ready-to-use chip harness for creating your own ASIC design and getting it fabricated for prototype or production purposes. It includes a <strong>standardized padring</strong>, blank silicon <strong>design area of 10mm<sup>2</sup></strong> and optional <strong>on-chip SoC</strong> (microcontroller/management/test framework). You can use it whether you are creating a proprietary/private chip, one for commercial purposes, or an open-source design.
    </p>
 
-"**Caravel**" is both the name of:
+..
+   "**Caravel**" is both the name of:
 
-*  an **Efabless chipIgnite chip template** (including padring); and
-*  its included **ready-made silicon SoC** (system-on-chip, i.e. CPU and other useful devices).
-   
-These parts are open source, but you may also freely use them for any closed/commercial/private project.
-
-Designing and fabricating an ASIC with `Efabless chipIgnite <https://efabless.com/chipignite>`_ requires that you use an existing supported template (or "frame"), and Caravel is recommended as the most popular, feature-rich, and production-ready template. The chipIgnite submission process automatically integrates your user project design area into the frame, so you don't have to worry about it.
+   *  an **Efabless chipIgnite chip template** (including padring); and
+   *  its included **ready-made silicon SoC** (system-on-chip, i.e. CPU and other useful devices).
+      
+   These parts are open source, but you may also freely use them for any closed/commercial/private project.
 
 .. hint::
    While this documentation describes **Caravel**, it also covers **Caravan** (our frame with some dedicated bare analog pads, suitable for prototyping) and **Caravel Mini**. All 3 are very similar, with some specific distinctions marked where appropriate.

@@ -1,5 +1,8 @@
 # Documentation source for Caravel Frame and SoC
 
+> [!CAUTION]
+> This documentation is an early work-in-progress and should not be used yet!
+
 This is the Sphinx source code for new Caravel "readthedocs"-style documentation intended to replace (or at least supersede) https://caravel-mgmt-soc-litex.readthedocs.io and https://caravel-harness.readthedocs.io
 
 ## Decisions made

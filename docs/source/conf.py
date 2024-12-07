@@ -61,6 +61,11 @@ today_fmt = "%Y-%m-%d %H:%M"
 todo_include_todos = True
 numfig = True
 
+# Hack to put a DRAFT warning message on every page:
+rst_prolog = """
+.. danger::
+    **This documentation is an early work-in-progress and should not be used yet!**
+"""
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
