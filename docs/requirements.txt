@@ -3,3 +3,4 @@ sphinx-autobuild
 sphinxcontrib-wavedrom
 sphinx-wagtail-theme
 sphinx-new-tab-link
+sphinx-simplepdf

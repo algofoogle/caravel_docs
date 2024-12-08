@@ -28,11 +28,14 @@ from docutils.parsers.rst import roles
 project = 'Caravel Frame and SoC'
 copyright = '2024, Efabless'
 author = 'Efabless'
+release = '2024.09.13-1' # This is based on the latest tag: https://github.com/efabless/caravel/tags
+version = '6.1.0' # x.y.z: x=Major(MPW version), y=Minor(Frame stepping), z=Revision(doco stepping)
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
+    'sphinx_simplepdf', #NOTE: Not bad, but doesn't work so well yet. Need to find an alternative?
     'sphinx.ext.ifconfig',
     'sphinxcontrib.wavedrom', # For rendering register diagrams.
     'sphinx.ext.mathjax',
@@ -119,3 +122,4 @@ html_sidebars = {"**": [
     "menu_footer.html",    # Extra HTML in menu_footer.html displays at bottom of sidebar menu.
 ]}
 
+simplepdf_file_name = 'caravel_frame_and_soc.pdf'

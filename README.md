@@ -75,6 +75,21 @@ I use VSCode. I have these extensions installed (but not sure whether I actually
 [readthedocs.io](https://readthedocs.io) is a service which automates the building and hosting of documentation, typically using Sphinx. It can watch pushes to this repo and automatically handle building/deployment. It relies on [`.readthedocs.yaml`](./.readthedocs.yaml)
 
 
+## PDF generation
+
+My first attempt with PDF generation was using [Sphinx-SimplePDF](https://sphinx-simplepdf.readthedocs.io/en/latest/index.html) which looks kinda nice, but I'm not sure if it's a good choice. It doesn't have a lot of documentation yet, and it hasn't been updated since Nov 2023 (at the time of writing).
+
+If you want to try this out, though, do:
+
+```bash
+cd docs
+make clean simplepdf
+```
+
+...and it will generate `build/simplepdf/caravel_frame_and_soc.pdf`
+
+
+
 [caravel]: https://github.com/efabless/caravel
 [rst]: https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext
 [rstsh]: https://marketplace.visualstudio.com/items?itemName=trond-snekvik.simple-rst

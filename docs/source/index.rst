@@ -81,6 +81,7 @@ This guide covers general use of Caravel as a chip padring/harness for essential
 .. toctree::
    :maxdepth: 2
 
+   Caravel Overview <self>
    caravel-features
    pinout
    Getting Started <getting-started>
