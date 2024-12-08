@@ -91,7 +91,7 @@ This guide covers general use of Caravel as a chip padring/harness for essential
    logic-analyzer
    uart
    wishbone
-   spi-master
+   spi-controller
    counter-timer
    housekeeping
    irq

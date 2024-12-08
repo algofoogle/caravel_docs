@@ -14,6 +14,8 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
+from docutils import nodes
+from docutils.parsers.rst import roles
 
 
 # Configuration file for the Sphinx documentation builder.
@@ -65,7 +67,19 @@ numfig = True
 rst_prolog = """
 .. danger::
     **This documentation is an early work-in-progress and should not be used yet!**
+
+.. danger::
+    **Before public release,** fix 'Edit on GitHub' via ``html_theme_options['github_url']``
 """
+
+# A handler for the 'tbc' role, i.e. "to be confirmed" text:
+def tbc_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
+  """Role for marking text as 'to be confirmed'."""
+  node = nodes.inline(text, text, classes=['to-be-confirmed'])
+  return [node], []
+roles.register_local_role('tbc', tbc_role)
+
+
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -90,7 +104,7 @@ html_theme_options = dict(
     logo_url = "/",
     logo_width = 125,
     logo_height = 30,
-    github_url = "https://github.com/efabless/caravel_docs/blob/main/docs/source/",
+    github_url = "https://github.com/algofoogle/caravel_docs/blob/main/docs/source/",
     header_links = "Efabless.com|https://efabless.com, GitHub/efabless|https://github.com/efabless", # In top-right corner of header bar
     footer_links = ",".join([
         "Efabless.com|https://efabless.com",

@@ -18,10 +18,10 @@
    # SPDX-License-Identifier: Apache-2.0
    -->
 
-SPI Master
-==========
+SPI Controller
+==============
 
 .. tip::
 
-   Not to be confused with the firmware SPI interface.
+   Not to be confused with the :ref:`firmware SPI bus <firmware-spi>` or :doc:`HKSPI <housekeeping>`.
 

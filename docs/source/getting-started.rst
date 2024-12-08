@@ -29,3 +29,10 @@ Block diagram
 
 caravel_user_project template
 -----------------------------
+
+Power-up/boot process
+---------------------
+
+.. todo::
+
+   Create a diagram or sequence that describes both the steps and timing from Caravel chip power-up, both with and without Caravel CPU involvement, and including :term:`crt0` behaviour.

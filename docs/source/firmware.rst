@@ -21,8 +21,10 @@
 Firmware, Flash SPI, and Programming Guide
 ==========================================
 
-Flash SPI interface
--------------------
+.. _firmware-spi:
+
+Firmware Flash SPI interface
+----------------------------
 
 Writing and compiling basic firmware for the Caravel RISC-V CPU
 ---------------------------------------------------------------

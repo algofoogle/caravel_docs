@@ -24,6 +24,10 @@ Features of Caravel
 .. todo::
     Include a general summary in here of each of the features, then link to their respective sections, as this page sort of does: https://caravel-mgmt-soc-litex.readthedocs.io/en/latest/
 
+.. todo::
+    How do we offer a "quick-start, essentials-only, what you need to know" guide or summary on things?
+    Should it be the above proposed high-level list of features you need to know about and their default state, noting that their default state is a sensible starting point for maximal usability? **OR** should it be a summary panel at the start of every page: "The essentials you need to know about X: You don't need to worry about it". **OR** should both of these things be done?
+
 Caravel includes the following key features:
 
 General
