@@ -60,3 +60,5 @@ Glossary
    PVT
       Short for "Process, Voltage, Temperature" and typically used in the context "PVT-dependent", meaning that the exact behaviour/characteristics of something is affected (or otherwise likely to deviate from typical stated figures) by virtue of: variations that naturally occur in the fabrication process; variations in precise voltages in the circuit; and variations in ambient temperature.
    
+   Caravel Eval Board
+      The bring-up/development/evaluation board for chipIgnite/Caravel chips. Typically one board is supplied with every chipIgnite order that includes QFN-packaged Caravel chips. For more information, see https://github.com/efabless/caravel_board and note that you can `purchase a demo board from the Efabless Store <https://store.efabless.com/products/chipignite-demo-board>`_ -- the demo board includes 1 Caravel demo chip.

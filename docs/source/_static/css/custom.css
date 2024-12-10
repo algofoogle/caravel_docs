@@ -8,21 +8,48 @@ body header.bg-primary {
 td :last-child {
     margin-bottom: 0;
 }
-.to-be-confirmed {
+.draft-todo {
+    background-color: #fcc;
+    font-weight: bold;
+
+}
+.draft-todo::before {
+    background-color: #c00;
+    color: #ff0;
+    content: 'TODO: [';
+    font-weight: bold;
+    margin: 0 0.3rem;
+}
+.draft-todo::after {
+    background-color: #c00;
+    color: #ff0;
+    content: ']';
+    font-weight: bold;
+    margin: 0 0.3rem;
+}
+.prod-to-be-confirmed {
+    background-color: #ffe;
+    color: #300;
+}
+.draft-to-be-confirmed {
     background-color: #ffc;
     color: #900;
 }
-.to-be-confirmed::before {
+.draft-to-be-confirmed::before {
     background-color: #ffc;
     color: #9006;
     content: '[';
     font-weight: bold;
     margin: 0 0.3rem;
 }
-.to-be-confirmed::after {
+.draft-to-be-confirmed::after {
     background-color: #ffc;
     color: #9006;
     content: '](TBC)';
     font-weight: bold;
     margin: 0 0.3rem;
+}
+/* nbar = N/Bar (active low overbar style for digital signals) */
+.nbar {
+    text-decoration: overline;
 }

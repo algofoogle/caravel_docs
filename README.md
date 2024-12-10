@@ -75,6 +75,20 @@ I use VSCode. I have these extensions installed (but not sure whether I actually
 [readthedocs.io](https://readthedocs.io) is a service which automates the building and hosting of documentation, typically using Sphinx. It can watch pushes to this repo and automatically handle building/deployment. It relies on [`.readthedocs.yaml`](./.readthedocs.yaml)
 
 
+## Special features of this doco
+
+Most of this stuff is defined/managed in [conf.py](docs/source/conf.py):
+
+*   `.. todo::` admonitions have custom CSS to really make them stand out.
+*   The `tbc` role (e.g. `` You can :tbc:`push the button anytime` and it will work ``) marks a piece of text as 'To Be Confirmed', i.e. assumed to be correct, but needs to be verified.
+*   The `todo` role (e.g. `` You can reset the CPU in many ways. :todo:`Define them.` ``) is like a comment for something the authors need to do (as opposed to actual content that could be included.)
+*   `DRAFT` can be set to:
+    *   `True`: Enable rendering of `todo` items, and visually mark/highlight `tbc` inline content.
+    *   `False`: Prevent rendering of `todo` items, and apply a basic CSS style to `tbc` content so it doesn't stand out.
+*   [`docs/source/_templates/substitutions.rst`](docs/source/_templates/substitutions.rst) contains shorthands that can be included inline in pages, to replace them with more elaborate content (or later, alternative content if required), e.g. `|caravel_board|` becomes a nicer representation of the name of the board and a link to its definition.
+
+
+
 ## PDF generation
 
 My first attempt with PDF generation was using [Sphinx-SimplePDF](https://sphinx-simplepdf.readthedocs.io/en/latest/index.html) which looks kinda nice, but I'm not sure if it's a good choice. It doesn't have a lot of documentation yet, and it hasn't been updated since Nov 2023 (at the time of writing).

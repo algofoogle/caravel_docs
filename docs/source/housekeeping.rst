@@ -18,12 +18,11 @@
    # SPDX-License-Identifier: Apache-2.0
    -->
 
+
 Housekeeping and HKSPI
 ======================
 
-**Housekeeping** (HK) is a module inside Caravel that allow for supervisory control (:tbc:`is this the right term or does that incorrectly imply CPU 'privilege' levels?`) over certain blocks of
-the chip and is typically used for :term:`bring-up` debugging purposes or possibly
-diagnostic/maintenance purposes in a field application.
+**Housekeeping** (HK) is an externally-accessible module inside Caravel that can take control over certain blocks of the chip frame/SoC. It's typically used for :term:`bring-up` debugging purposes, and could be used for diagnostic/maintenance purposes in a field application.
 
 With Housekeeping, you can externally access certain SoC registers (some read-only, some read/write)
 to inspect some aspects of the SoC state or otherwise control its behaviour, including to:
@@ -35,7 +34,7 @@ to inspect some aspects of the SoC state or otherwise control its behaviour, inc
 *  Reconfigure GPIO pin functions.
 *  Take over and optionally reprogram a firmware SPI Flash ROM chip connected to the Caravel CPU.
 
-The Housekeeping module can be accessed :tbc:`internally by the Caravel CPU`, or externally via
+The Housekeeping module can be accessed :tbc:`internally by the Caravel CPU, or` externally via
 the "HKSPI" SPI slave interface.
 
 .. todo::
@@ -49,28 +48,28 @@ the "HKSPI" SPI slave interface.
    *  HKSPI can be blocked or interfered with by changing config of ``IO[4:1]`` and should be only be done after disabling HK first.
 
 .. todo::
-   Explain that the caravel_board makes this easy. Optionally provide examples of how to do it or otherwise link to a better resource describing that part of caravel_board.
+   Explain that the |caravel_board| makes this easy. Optionally provide examples of how to do it or otherwise link to a better resource describing that part of caravel_board.
 
 Housekeeping SPI (HKSPI)
 ------------------------
 
-"HKSPI" is an :term:`SPI` responder that can be accessed from a remote host through a standard 4-pin serial interface.
+"HKSPI" is an :term:`SPI` responder that can be accessed from an external controller (e.g. the |caravel_board|) through a standard 4-pin serial interface. 
 The SPI implementation is `mode 0 <https://en.wikipedia.org/wiki/Serial_Peripheral_Interface#Mode_numbers>`_, with new data on ``SDI`` captured on the ``SCK`` rising edge, and output data presented on the falling edge of ``SCK`` (to be sampled on the next ``SCK`` rising edge).
 The SPI pins are shared with user area GPIO.
 
 Related pins
 ------------
 
-*  :ref:`SDI <sdi>`
-*  :ref:`CSB <csb>`
-*  :ref:`SCK <sck>`
-*  :ref:`SDO <sdo>`
+*  :ref:`CSB <csb>` -- HKSPI input: "Chip Select bar" (falling edge starts an HKSPI transaction).
+*  :ref:`SCK <sck>` -- HKSPI input: Serial clock.
+*  :ref:`SDI <sdi>` -- HKSPI input: Serial data in, clocked in on rising edge of ``SCK``.
+*  :ref:`SDO <sdo>` -- HKSPI output: Serial data out, clocked out on falling edge of ``SCK``.
 
 SPI protocol definition
 -----------------------
 
 All input is in groups of 8 bits.
-Each byte is input most-significant-bit first.
+Each byte is input MSB (most-significant-bit) first.
 
 Every command sequence requires one command word (8 bits), followed by one address word (8 bits), followed by one or more data words (8 bits each), according to the data transfer modes described in :ref:`housekeeping_spi_modes`.
 
@@ -85,7 +84,7 @@ Every command sequence requires one command word (8 bits), followed by one addre
 Addresses are read in sequence from lower values to higher values.
 
 Therefore groups of bits larger than 8 should be grouped such that the lowest bits are at the highest address.
-Any bits additional to an 8-bit boundary should be at the lowest address.
+Any bits additional to an 8-bit boundary should be at the lowest address. :todo:`Explain this better.`
 
 Data is captured from the register map in bytes on the falling edge of the last SCK before a data byte transfer.
 Multi-byte transfers should ensure that data do not change between byte reads.

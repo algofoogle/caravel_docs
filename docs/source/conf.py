@@ -25,6 +25,9 @@ from docutils.parsers.rst import roles
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
+# If DRAFT is True, TODOs are shown, and TBCs are highlighted:
+DRAFT = True #SMELL: This should come from an ENV var or something instead.
+
 project = 'Caravel Frame and SoC'
 copyright = '2024, Efabless'
 author = 'Efabless'
@@ -63,11 +66,16 @@ exclude_patterns = [
 
 master_doc = "index"
 today_fmt = "%Y-%m-%d %H:%M"
-todo_include_todos = True
+if DRAFT:
+    todo_include_todos = True
+else:
+    todo_include_todos = False
 numfig = True
 
 # Hack to put a DRAFT warning message on every page:
 rst_prolog = """
+.. include:: /_templates/substitutions.rst
+
 .. danger::
     **This documentation is an early work-in-progress and should not be used yet!**
 
@@ -75,13 +83,36 @@ rst_prolog = """
     **Before public release,** fix 'Edit on GitHub' via ``html_theme_options['github_url']``
 """
 
-# A handler for the 'tbc' role, i.e. "to be confirmed" text:
+# A handler for the 'tbc' role, i.e. "to be confirmed" text. This is content
+# which we THINK is correct (and can be presented as-is publicy) but probably
+# need to be checked for accuracy. In DRAFT mode this content should render
+# with a draft-to-be-confirmed style which makes it stand out. In PRODUCTION
+# mode this should render with the prod-to-be-confirmed style which has no
+# explicit CSS.
 def tbc_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
   """Role for marking text as 'to be confirmed'."""
-  node = nodes.inline(text, text, classes=['to-be-confirmed'])
+  node = nodes.inline(text, text, classes=['draft-to-be-confirmed' if DRAFT else 'prod-to-be-confirmed'])
   return [node], []
 roles.register_local_role('tbc', tbc_role)
 
+# A handler for the 'todo' role, i.e. inline markers that we need to do
+# something more to the content. These are only shown if todo_include_todos is True.
+def todo_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
+  """Role for inline 'todo' text."""
+  if todo_include_todos:
+    node = nodes.inline(text, text, classes=['draft-todo' if DRAFT else 'prod-todo'])
+  else:
+    node = nodes.inline()
+  return [node], []
+roles.register_local_role('todo', todo_role)
+
+
+# A handler for the 'nbar' role, i.e. overbar for active-low signal names:
+def nbar_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
+  """Role for marking text as 'to be confirmed'."""
+  node = nodes.inline(text, text, classes=['nbar'])
+  return [node], []
+roles.register_local_role('nbar', nbar_role)
 
 
 # -- Options for HTML output -------------------------------------------------
