@@ -21,3 +21,8 @@
 Analog Connections
 ==================
 
+NOTES:
+------
+
+*  Allowing a pin to switch between digital and analog modes should be possible, but probably difficult. Might really only work well for OpenFrame, given how long it takes the CPU to signal everything in the GPIOs/chip.
+*  Comment on io_oeb and io_out when pads are configured for analog

@@ -62,3 +62,8 @@ Glossary
    
    Caravel Eval Board
       The bring-up/development/evaluation board for chipIgnite/Caravel chips. Typically one board is supplied with every chipIgnite order that includes QFN-packaged Caravel chips. For more information, see https://github.com/efabless/caravel_board and note that you can `purchase a demo board from the Efabless Store <https://store.efabless.com/products/chipignite-demo-board>`_ -- the demo board includes 1 Caravel demo chip.
+
+   Project ID
+      Every unique silicon layout (e.g. customer project) fabricated with Efabless chipIgnite has a unique 32-bit "Project ID" assigned by Efabless and included in the silicon layout. The Project ID is accessible by the Caravel SoC (and via :doc:`HKSPI <housekeeping>`) as a read-only 32-bit value, but is also present as "GDS art" text in the padring, rendered as 8 hex digits. Most Project IDs are of the pattern ``YYMMhhhh`` where ``hhhh`` is a random value assigned by Efabless at the initialization of the project, and ``YYMM`` is the shuttle number (e.g. ``2409``) and itself is formed of the last two digits of the shuttle year and the month number. An example Project ID (as a hex string) is ``240476A0`` which is `Tiny Tapeout 6 <https://tinytapeout.com/runs/tt06/>`_, on the April 2024 shuttle.
+
+      Note that when using the SoC or HKSPI to read the 32-bit value of the Project ID, some shuttles had the project ID bits in reverse order, e.g. ``240476A0`` (which in binary is ``0010_0100_0000_0100_0111_0110_1010_0000``) would be read as ``056E2024`` (which is the binary string in reverse: ``0000_0101_0110_1110_0010_0000_0010_0100``).

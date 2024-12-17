@@ -16,6 +16,7 @@
 
 from docutils import nodes
 from docutils.parsers.rst import roles
+import os
 
 
 # Configuration file for the Sphinx documentation builder.
@@ -26,7 +27,12 @@ from docutils.parsers.rst import roles
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 # If DRAFT is True, TODOs are shown, and TBCs are highlighted:
-DRAFT = True #SMELL: This should come from an ENV var or something instead.
+DRAFT = os.environ.get('DRAFT', 'True').lower().strip() in ['true', '1']
+# NOTE: DRAFT = True if not specified in environment.
+if DRAFT:
+   print('************ DRAFT mode ************')
+else:
+   print('------------ PRODUCTION mode ------------')
 
 project = 'Caravel Frame and SoC'
 copyright = '2024, Efabless'
@@ -75,11 +81,13 @@ numfig = True
 # Hack to put a DRAFT warning message on every page:
 rst_prolog = """
 .. include:: /_templates/substitutions.rst
-
+"""
+if DRAFT:
+    rst_prolog += """
 .. danger::
     **This documentation is an early work-in-progress and should not be used yet!**
+    This is being rendered in **DRAFT** mode.
 
-.. danger::
     **Before public release,** fix 'Edit on GitHub' via ``html_theme_options['github_url']``
 """
 

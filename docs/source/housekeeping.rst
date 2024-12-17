@@ -22,23 +22,17 @@
 Housekeeping and HKSPI
 ======================
 
-**Housekeeping** (HK) is an externally-accessible module inside Caravel that can take control over certain blocks of the chip frame/SoC. It's typically used for :term:`bring-up` debugging purposes, and could be used for diagnostic/maintenance purposes in a field application.
+**Housekeeping** (HK) describes a subset of SoC control registers which -- besides being addressable by the Caravel CPU -- have been made externally-accessible through a "Housekeeping SPI" (HKSPI) interface. This interface coexists on four of the Caravel GPIO pins (``mprj_io[4:1]``) and is always enabled at power-on (but can be deactivated at run-time). Importantly, this means any simple external SPI controller can always take control over certain blocks of the chip frame/SoC. This feature is typically used for :term:`bring-up` debugging purposes, and could be used for diagnostic/maintenance purposes in a field application.
 
 With Housekeeping, you can externally access certain SoC registers (some read-only, some read/write)
 to inspect some aspects of the SoC state or otherwise control its behaviour, including to:
 
-*  Verify the chipIgnite product ID and read your chip's unique Project ID.
+*  Verify the chipIgnite product ID and read your chip's unique :term:`Project ID`.
 *  Alter the chip's core clock paths/speed via :ref:`DLL <dll>` and :ref:`DCO <dco>`.
 *  Redirect the internal clock signals out via GPIO pins.
 *  Reset the Caravel RISC-V CPU.
 *  Reconfigure GPIO pin functions.
 *  Take over and optionally reprogram a firmware SPI Flash ROM chip connected to the Caravel CPU.
-
-The Housekeeping module can be accessed :tbc:`internally by the Caravel CPU, or` externally via
-the "HKSPI" SPI slave interface.
-
-.. todo::
-   Explain how to access HK internally, if that's even still possible.
 
 .. todo::
    Provide a clear reference to GPIO reconfiguration behaviour, including:
@@ -50,20 +44,37 @@ the "HKSPI" SPI slave interface.
 .. todo::
    Explain that the |caravel_board| makes this easy. Optionally provide examples of how to do it or otherwise link to a better resource describing that part of caravel_board.
 
-Housekeeping SPI (HKSPI)
-------------------------
-
-"HKSPI" is an :term:`SPI` responder that can be accessed from an external controller (e.g. the |caravel_board|) through a standard 4-pin serial interface. 
-The SPI implementation is `mode 0 <https://en.wikipedia.org/wiki/Serial_Peripheral_Interface#Mode_numbers>`_, with new data on ``SDI`` captured on the ``SCK`` rising edge, and output data presented on the falling edge of ``SCK`` (to be sampled on the next ``SCK`` rising edge).
+"HKSPI" is an :term:`SPI` responder that can be accessed from an external controller (e.g. the |caravel_board|) through a standard 4-pin SPI serial interface. The SPI implementation is `mode 0 <https://en.wikipedia.org/wiki/Serial_Peripheral_Interface#Mode_numbers>`_, with new data on ``SDI`` captured on the ``SCK`` rising edge, and output data presented on the falling edge of ``SCK`` (to be sampled on the next ``SCK`` rising edge).
 The SPI pins are shared with user area GPIO.
 
 Related pins
 ------------
 
-*  :ref:`CSB <csb>` -- HKSPI input: "Chip Select bar" (falling edge starts an HKSPI transaction).
-*  :ref:`SCK <sck>` -- HKSPI input: Serial clock.
-*  :ref:`SDI <sdi>` -- HKSPI input: Serial data in, clocked in on rising edge of ``SCK``.
-*  :ref:`SDO <sdo>` -- HKSPI output: Serial data out, clocked out on falling edge of ``SCK``.
+.. list-table:: Housekeeping SPI external interface pins
+   :name: housekeeping-spi-pins
+   :header-rows: 1
+   :widths: auto
+
+   * - GPIO pin
+     - HKSPI pin
+     - Dir
+     - Function
+   * - ``mprj_io[1]``
+     - :ref:`SDO <sdo>`
+     - Output
+     - Serial data out, clocked out on falling edge of ``SCK``
+   * - ``mprj_io[2]``
+     - :ref:`SDI <sdi>`
+     - Input
+     - Serial data in, clocked in on rising edge of ``SCK``
+   * - ``mprj_io[3]``
+     - :ref:`CSB <csb>`
+     - Input
+     - "Chip Select bar" (falling edge starts an HKSPI transaction)
+   * - ``mprj_io[4]``
+     - :ref:`SCK <sck>`
+     - Input
+     - Serial clock.
 
 SPI protocol definition
 -----------------------
@@ -141,25 +152,25 @@ In **n-byte mode** operation, the number of bytes to be read and/or written is e
 After ``n`` bytes have been read and/or written, the SPI returns to waiting for the next command.
 No toggling of CSB is required to end the command or to initiate the following command.
 
-Pass-thru mode
---------------
+Pass-through mode
+-----------------
 
-The pass-thru mode puts the CPU into immediate reset, then sets ``FLASH_CSB`` low to initiate a data transfer to the SPI flash.
-After the pass-thru command byte has been issued, all subsequent SPI signaling on ``SDI`` and ``SCK`` are applied directly to the SPI flash (pins ``FLASH_IO0`` and ``FLASH_CLK``, respectively), and the SPI flash data output (pin ``FLASH_IO1``) is applied directly to ``SDO``, until the ``CSB`` pin is raised.
+The pass-through mode puts the CPU into immediate reset, then sets ``FLASH_CSB`` low to initiate a data transfer to the SPI flash.
+After the pass-through command byte has been issued, all subsequent SPI signaling on ``SDI`` and ``SCK`` are applied directly to the SPI flash (pins ``FLASH_IO0`` and ``FLASH_CLK``, respectively), and the SPI flash data output (pin ``FLASH_IO1``) is applied directly to ``SDO``, until the ``CSB`` pin is raised.
 When ``CSB`` is raised, the ``FLASH_CSB`` is also raised, terminating the data transfer to the SPI flash.
 The CPU is brought out of reset, and starts executing instructions at the program start address.
 
 This mode allows the SPI flash to be programmed from the same SPI communication channel as the housekeeping SPI, without the need for additional wiring to the SPI flash chip.
 
-There are two pass-thru modes.
+There are two pass-through modes.
 The first one corresponds to the primary SPI flash used by the management SoC.
 The second one corresponds to a secondary optional SPI flash that can be defined in the user project.
 
 .. todo::
     The below sentence may require some rephrasing.
 
-The pass-thru mode allows a communications chip external to the Caravel chip program either SPI flash chip from a host computer without requiring separate external access to the SPI flash.
-Both pass-thru modes only connect to I/O pins 0 and 1 of the SPI flash chips, and so must operate only in the 4-pin SPI mode.
+The pass-through mode allows a communications chip external to the Caravel chip program either SPI flash chip from a host computer without requiring separate external access to the SPI flash.
+Both pass-through modes only connect to I/O pins 0 and 1 of the SPI flash chips, and so must operate only in the 4-pin SPI mode.
 The user project may elect to operate the SPI flash in quad mode using a 6-pin interface.
 
 Housekeeping SPI registers

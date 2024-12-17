@@ -8,6 +8,7 @@ This is the Sphinx source code for new Caravel "readthedocs"-style documentation
 ## Decisions made
 
 *   Continue using Sphinx as the documentation compiler, for compatibility with existing docs.
+*   Keep using `.rst` (reStructuredText) instead of `.md` (Markdown). I'm not sold on RST yet, but others are more familiar with it (plus existing doco we want to migrate is written with it), and it has some good extensibility.
 *   Retain the [`docs/`](./docs/) subdirectory so this can be planted into an existing repo (say, [caravel]) later.
 *   Switch to the [Wagtail theme](https://sphinx-wagtail-theme.readthedocs.io/) because it looks nice, supports full-width layouts and mobile views, and renders complex tables more sensibly.
 
@@ -56,6 +57,25 @@ Instead of doing a manual build (e.g. `make html` then running the Python HTTP s
 sphinx-autobuild source build --host 0.0.0.0
 ```
 
+Or simply:
+```bash
+./live.sh
+```
+
+## DRAFT vs. Production mode
+
+By default, [`conf.py`](./docs/source/conf.py) is configured so that `DRAFT=True` which causes some deliberately ugly stuff to appear:
+*   TODOs
+*   Highlighting of stuff that is TBC (To Be Confirmed)
+*   Warning messages on every page.
+
+You can disable DRAFT mode by setting the environment variable `DRAFT` to (say) `0` or `False`, e.g. by prefixing any command given here with `DRAFT=0` OR `DRAFT=False` -- Example:
+```bash
+DRAFT=0 ./live.sh
+```
+
+At the time of writing, while `DRAFT=True` is the default (if not otherwise specified), this might change in future.
+
 
 ## Editing
 
@@ -89,18 +109,47 @@ Most of this stuff is defined/managed in [conf.py](docs/source/conf.py):
 
 
 
-## PDF generation
+# PDF generation
 
-My first attempt with PDF generation was using [Sphinx-SimplePDF](https://sphinx-simplepdf.readthedocs.io/en/latest/index.html) which looks kinda nice, but I'm not sure if it's a good choice. It doesn't have a lot of documentation yet, and it hasn't been updated since Nov 2023 (at the time of writing).
+## Overview
+
+My first attempt with PDF generation was using [Sphinx-SimplePDF](https://sphinx-simplepdf.readthedocs.io/en/latest/index.html) but I'm not sure if it's a good choice. It doesn't have a lot of documentation yet, and it hasn't been updated since Nov 2023 (at the time of writing).
 
 If you want to try this out, though, do:
 
 ```bash
 cd docs
-make clean simplepdf
+DRAFT=0 make clean simplepdf
 ```
 
 ...and it will generate `build/simplepdf/caravel_frame_and_soc.pdf`
+
+The default styling of the PDF looks somewhat nice (coincidentally, our Efabless red or close enough to it), and it can be modified a bit through CSS and other means. Just note that it might not go as far as we need. 
+
+## Possible PDF generation issues
+
+Here are some points to consider about Sphinx-SimplePDF:
+*   It hasn't been updated in a year.
+*   The documentation is weak. Maybe the functionality is too.
+*   There might be other PDF generators (maybe also coupled with Sphinx) that are more popular.
+*   I haven't yet been able to get it to do sensible page breaks before certain headings.
+*   I doubt it can do two-column layouts (but do these matter?)
+*   Rendering of superscript (e.g. "10mm<sup>2</sup>") is a bit weird with extra X/Y margins.
+*   There is trailing margin on (say) bold/strong elements.
+*   Links in a PDF should be rendered as text also (but maybe this can be fixed with CSS `content`).
+*   Rendering of `index.rst` content (esp. its headings) is weird/different from the rest of the documents. This might be an issue more-generally with Sphinx, though.
+*   It's not clear how to set the size of images in a way that has any effect on the image in the PDF. None of `em`, `px`, `%` or `mm` have any effect on the image in the output PDF.
+
+To include SVGs and have them properly rendered in the output PDF, you will likely need to:
+*   install any fonts that the SVGs use -- for example, install 'Roboto' with: `sudo apt install fonts-roboto`
+*   or ensure the fonts are outlined, e.g. converted to shapes rather than retained as text (which is not so great because they can no longer be searched or copied);
+*   **or (better)** embed them in the SVG, but this can be difficult/non-standard. For more info see [here](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/SVG_fonts), [here](https://dee.underscore.world/blog/embedding-fonts-in-svgs/), and [here](https://oreillymedia.github.io/Using_SVG/extras/ch07-dataURI-fonts.html). I haven't tried to work out yet how SimplePDF does its SVG=>PDF conversion.
+
+Before and after doing `sudo apt install fonts-roboto`, here's the result of two different renders of the documentation to PDF (i.e. the 'Before' error is in the PDF itself, not simply in how the PDF is displayed):
+
+| Before: | After: |
+|-|-|
+| ![](./misc/bad-font.png) | ![](./misc/good-font.png) |
 
 
 
