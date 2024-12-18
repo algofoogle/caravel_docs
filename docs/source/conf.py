@@ -17,7 +17,7 @@
 from docutils import nodes
 from docutils.parsers.rst import roles
 import os
-
+import datetime
 
 # Configuration file for the Sphinx documentation builder.
 # For the full list of built-in configuration values, see the documentation:
@@ -30,12 +30,12 @@ import os
 DRAFT = os.environ.get('DRAFT', 'True').lower().strip() in ['true', '1']
 # NOTE: DRAFT = True if not specified in environment.
 if DRAFT:
-   print('************ DRAFT mode ************')
+    print('************ DRAFT mode ************')
 else:
-   print('------------ PRODUCTION mode ------------')
+    print('------------ PRODUCTION mode ------------')
 
 project = 'Caravel Frame and SoC'
-copyright = '2024, Efabless'
+copyright = '© 2024 Efabless Corporation'
 author = 'Efabless'
 release = '2024.09.13-1' # This is based on the latest tag: https://github.com/efabless/caravel/tags
 version = '6.1.0' # x.y.z: x=Major(MPW version), y=Minor(Frame stepping), z=Revision(doco stepping)
@@ -98,28 +98,28 @@ if DRAFT:
 # mode this should render with the prod-to-be-confirmed style which has no
 # explicit CSS.
 def tbc_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
-  """Role for marking text as 'to be confirmed'."""
-  node = nodes.inline(text, text, classes=['draft-to-be-confirmed' if DRAFT else 'prod-to-be-confirmed'])
-  return [node], []
+    """Role for marking text as 'to be confirmed'."""
+    node = nodes.inline(text, text, classes=['draft-to-be-confirmed' if DRAFT else 'prod-to-be-confirmed'])
+    return [node], []
 roles.register_local_role('tbc', tbc_role)
 
 # A handler for the 'todo' role, i.e. inline markers that we need to do
 # something more to the content. These are only shown if todo_include_todos is True.
 def todo_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
-  """Role for inline 'todo' text."""
-  if todo_include_todos:
-    node = nodes.inline(text, text, classes=['draft-todo' if DRAFT else 'prod-todo'])
-  else:
-    node = nodes.inline()
-  return [node], []
+    """Role for inline 'todo' text."""
+    if todo_include_todos:
+        node = nodes.inline(text, text, classes=['draft-todo' if DRAFT else 'prod-todo'])
+    else:
+        node = nodes.inline()
+    return [node], []
 roles.register_local_role('todo', todo_role)
 
 
 # A handler for the 'nbar' role, i.e. overbar for active-low signal names:
 def nbar_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
-  """Role for marking text as 'to be confirmed'."""
-  node = nodes.inline(text, text, classes=['nbar'])
-  return [node], []
+    """Role for marking text as 'to be confirmed'."""
+    node = nodes.inline(text, text, classes=['nbar'])
+    return [node], []
 roles.register_local_role('nbar', nbar_role)
 
 
@@ -161,4 +161,23 @@ html_sidebars = {"**": [
     "menu_footer.html",    # Extra HTML in menu_footer.html displays at bottom of sidebar menu.
 ]}
 
+html_context = {
+    'cover_meta_data': f'{project} documentation',
+    # 'cover_logo_title': '<img src="_static/i/efabless-logo-dark-bg.png" />',
+    'cover_footer':
+        f'Documentation build: {datetime.datetime.now().strftime("%Y%m%d-%H%M%S")}<br>'
+        f'<a href="https://efabless.com/">{copyright}</a>',
+}
+
 simplepdf_file_name = 'caravel_frame_and_soc.pdf'
+# simplepdf_debug = True
+simplepdf_vars = {
+    #NOTE: These get embedded directly in CSS, so literal strings must be quoted:
+    # 'cover-overlay': 'rgba(160, 0, 0, 0.8)',
+    'cover-bg': 'url(i/m2-green-on-red-bg.jpg) no-repeat center',
+    # 'cover': '#aa0000',
+    'cover': '#ffffff',
+    'top-right-content': f'"{project} documentation"',
+    'bottom-left-content': f'"{copyright}"',
+    'bottom-right-content': 'string(heading)',
+}

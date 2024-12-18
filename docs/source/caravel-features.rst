@@ -28,10 +28,14 @@ Features of Caravel
     How do we offer a "quick-start, essentials-only, what you need to know" guide or summary on things?
     Should it be the above proposed high-level list of features you need to know about and their default state, noting that their default state is a sensible starting point for maximal usability? **OR** should it be a summary panel at the start of every page: "The essentials you need to know about X: You don't need to worry about it". **OR** should both of these things be done?
 
-Caravel includes the following key features:
+As a padframe, Caravel offers easy-to-connect standard features such as GPIO pins, power delivery (optionally with multple power domains), clocking, and reset logic (both a dedicated reset pin, and a :term:`POR` circuit). These are well-characterized and qualified to reduce the overhead of the designer.
 
-General
--------
+As an :term:`SoC`, Caravel provides a wide range of optional functionality on-chip that can either be largely ignored or can be used for any of :term:`bringing up <bring-up>` your design, debugging and providing a diagnostic/maintenance interface, controlling different peripherals that your design can leverage, or even as a full microcontroller (including CPU with external firmware interface, basic UART, and SPI controller).
+
+
+
+Caravel Padframe General Features
+---------------------------------
 
 These features are universally available to any chip based on the Caravel frame, even without specific use of the **Management SoC**.
 
@@ -56,8 +60,8 @@ These features are universally available to any chip based on the Caravel frame,
 
 
 
-Management SoC
---------------
+Caravel Management SoC Features
+-------------------------------
 
 The Management SoC's RISC-V CPU (RV32I) is built into the die area, adjacent the user project wrapper, and can be interfaced with your design, as well as externally to the chip.
 

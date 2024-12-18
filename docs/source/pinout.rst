@@ -18,18 +18,20 @@
    # SPDX-License-Identifier: Apache-2.0
    -->
 
-Caravel Pinout
-==============
+Caravel Pinouts
+===============
 
-QFN64
------
+All chips fabricated using the Caravel harness have a standard pinout with some pins dedicated to the SoC (i.e. the CPU), some for power, most for user-configurable GPIOs, and a few with shared functions.
 
-.. figure:: _static/i/caravel-qfn-pinout.svg
-      :name: caravel-qfn-pinout
-      :alt: Caravel QFN64 pinout
-      :align: center
+Caravel chips can be ordered in a 64-pin :term:`QFN` package, or as bare dice (unpackaged, bare silicon chips).
 
-      Caravel QFN64 pinout
+Older generations of chipIgnite and the Open MPW shuttles also supplied :term:`WLCSP` packaged parts.
+
+
+.. rst-class:: break_before, ssp-landscape, break_after
+
+Caravel pins and functions
+--------------------------
 
 .. list-table:: Pin description
       :name: pin-description
@@ -37,7 +39,7 @@ QFN64
   
       * - Name
         - Type
-        - Summary description
+        - Description
       * - .. _mprj_io:
   
           ``mprj_io[37:0]``
@@ -212,10 +214,33 @@ QFN64
 
 
 
-WLCSP
------
+Caravel QFN-64 pinout
+---------------------
+
+.. figure:: _static/i/caravel-qfn-pinout.svg
+      :name: caravel-qfn-pinout
+      :alt: Caravel QFN64 pinout
+      :align: center
+
+      Caravel QFN64 pinout
 
 
 
-Bare die
---------
+Caravel bare die pinout
+-----------------------
+
+Caravel bare dice have bond pads in a standard padring and are numbered starting at 1 on the top of the left-hand edge, incrementing counter-clockwise up to pad 63.
+
+
+
+Caravel WLCSP pinout
+--------------------
+
+Wafer-level chip-scale packaging is no longer offered by Efabless for standard chipIgnite orders, but may be specially-ordered and customized for large-volume production orders.
+
+Older generations of Caravel chip already fabricated as WLCSP instead of QFN or bare dice had the following pinout:
+
+.. todo::
+   Put in BGA diagram, X/Y labeling, and table. **Otherwise,** make the table above support pin numbering for all variants in separate columns.
+
+
