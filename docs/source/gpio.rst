@@ -22,6 +22,8 @@ General Purpose Input/Output
 ============================
 
 
+.. _mgmt_gpio:
+
 Management GPIO pin
 -------------------
 
@@ -30,3 +32,15 @@ GPIO configuration by firmware or HKSPI
 
 GPIO power-on configuration by user_defines
 -------------------------------------------
+
+Standard GPIO configuration mode constants
+------------------------------------------
+
+
+.. _GPIO_MODE_MGMT_STD_OUTPUT:
+
+GPIO_MODE_MGMT_STD_OUTPUT
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+TBC
+

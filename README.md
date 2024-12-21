@@ -151,6 +151,17 @@ Before and after doing `sudo apt install fonts-roboto`, here's the result of two
 |-|-|
 | ![](./misc/bad-font.png) | ![](./misc/good-font.png) |
 
+I haven't found a nicer way to install 'Roboto Mono' than doing this:
+
+```bash
+cd /tmp
+mkdir fonts
+wget --content-disposition -P fonts https://github.com/googlefonts/RobotoMono/raw/refs/heads/main/fonts/ttf/RobotoMono-{Bold,BoldItalic,Italic,Light,LightItalic,Medium,MediumItalic,Regular,Thin,ThinItalic}.ttf
+sudo mkdir /usr/share/fonts/truetype/roboto-mono
+sudo cp fonts/*.ttf /usr/share/fonts/truetype/roboto-mono
+```
+
+...which works generally for use of that font in Ubuntu, but doesn't seem to work for SVGs rendered into the PDF. I'm not sure why yet.
 
 
 [caravel]: https://github.com/efabless/caravel

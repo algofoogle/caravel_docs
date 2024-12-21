@@ -47,8 +47,8 @@ to inspect some aspects of the SoC state or otherwise control its behaviour, inc
 "HKSPI" is an :term:`SPI` responder that can be accessed from an external controller (e.g. the |caravel_board|) through a standard 4-pin SPI serial interface. The SPI implementation is `mode 0 <https://en.wikipedia.org/wiki/Serial_Peripheral_Interface#Mode_numbers>`_, with new data on ``SDI`` captured on the ``SCK`` rising edge, and output data presented on the falling edge of ``SCK`` (to be sampled on the next ``SCK`` rising edge).
 The SPI pins are shared with user area GPIO.
 
-Related pins
-------------
+Housekeeping SPI pins
+---------------------
 
 .. list-table:: Housekeeping SPI external interface pins
    :name: housekeeping-spi-pins
@@ -76,8 +76,8 @@ Related pins
      - Input
      - Serial clock.
 
-SPI protocol definition
------------------------
+Housekeeping SPI protocol definition
+------------------------------------
 
 All input is in groups of 8 bits.
 Each byte is input MSB (most-significant-bit) first.
@@ -152,10 +152,10 @@ In **n-byte mode** operation, the number of bytes to be read and/or written is e
 After ``n`` bytes have been read and/or written, the SPI returns to waiting for the next command.
 No toggling of CSB is required to end the command or to initiate the following command.
 
-Pass-through mode
------------------
+Housekeeping SPI Pass-through mode
+----------------------------------
 
-The pass-through mode puts the CPU into immediate reset, then sets ``FLASH_CSB`` low to initiate a data transfer to the SPI flash.
+The pass-through mode puts the CPU into immediate reset, then sets ``FLASH_CSB`` low to initiate a data transfer to the CPU's attached SPI flash.
 After the pass-through command byte has been issued, all subsequent SPI signaling on ``SDI`` and ``SCK`` are applied directly to the SPI flash (pins ``FLASH_IO0`` and ``FLASH_CLK``, respectively), and the SPI flash data output (pin ``FLASH_IO1``) is applied directly to ``SDO``, until the ``CSB`` pin is raised.
 When ``CSB`` is raised, the ``FLASH_CSB`` is also raised, terminating the data transfer to the SPI flash.
 The CPU is brought out of reset, and starts executing instructions at the program start address.
@@ -173,19 +173,15 @@ The pass-through mode allows a communications chip external to the Caravel chip 
 Both pass-through modes only connect to I/O pins 0 and 1 of the SPI flash chips, and so must operate only in the 4-pin SPI mode.
 The user project may elect to operate the SPI flash in quad mode using a 6-pin interface.
 
-Housekeeping SPI registers
+Housekeeping SPI addresses
 --------------------------
 
 The purpose of the housekeeping SPI is to give access to certain system values and controls independently of the CPU.
 The housekeeping SPI can be accessed even when the CPU is in full reset.
 Some control registers in the housekeeping SPI affect the behaviour of the CPU in a way that can be potentially detrimental to the CPU operation, such as adjusting the trim value of the digital frequency-locked loop generating the CPU core clock.
 
-Under normal working conditions, the SPI should not need to be accessed unless it is to adjust the clock speed of the CPU.
-All other functions are purely for test and debug.
+While both the CPU and HKSPI can access the same registers that control/inspect certain SoC functions, the addresses are different between the two interfaces. Namely, accessing these registers via HKSPI uses an 8-bit address only, while accessing them via the CPU uses 32-bit addresses scattered through the range ``0x26000000`` -- ``0x262FFFFF`` with no correlation between the addresses of the two interfaces.
 
-The housekeeping SPI can be accessed by the CPU from a running program by enabling the SPI controller, and enabling the bit that connects the internal SPI controller directly to the housekeeping SPI.
-This configuration then allows a program to read, for example, the user project ID of the chip.
-See the :doc:`SPI Controller description <spi-controller>` for details.
 
 .. todo::
 

@@ -23,6 +23,8 @@ Caravel Mini Specifics
 
 This is a summary of all things that are common and different between Caravel Mini and the normal Caravel.
 
+.. _caravel_mini_common_features:
+
 Common features
 ---------------
 

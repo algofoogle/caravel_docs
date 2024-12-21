@@ -43,8 +43,9 @@
       }
 
       .cls-13, .cls-18 {
-        font-family: RobotoMono-Bold, 'Roboto Mono';
+        font-family: RobotoMono-Bold, 'Roboto Mono', 'Roboto Mono, Bold', 'Roboto Mono Bold';
         font-variation-settings: 'wght' 700;
+        font-weight: bold;
       }
 
       .cls-21 {
@@ -150,7 +151,7 @@
       }
 
       .cls-19, .cls-15 {
-        font-family: RobotoMono-Regular, 'Roboto Mono';
+        font-family: RobotoMono-Regular, 'Roboto Mono', 'Roboto Mono, Regular', 'Roboto Mono Regular';
         font-variation-settings: 'wght' 400;
       }
 

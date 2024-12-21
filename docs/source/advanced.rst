@@ -47,3 +47,9 @@ The common parts of the management core wrapper include:
 
 Building Caravel using Litex
 ----------------------------
+
+Misc
+----
+
+*  CPU as a testbench, e.g. using the CPU to drive **inputs** into UPW on GPIO pins.
+*  Reset behaviour, sources, options, e.g. is it a good idea to rely solely on `wb_rst_i`?

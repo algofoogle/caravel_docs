@@ -27,6 +27,8 @@ Caravel chips can be ordered in a 64-pin :term:`QFN` package, or as bare dice (u
 
 Older generations of chipIgnite and the Open MPW shuttles also supplied :term:`WLCSP` packaged parts.
 
+.. todo::
+  Work out the best way to present the pin placement/numbering for different packages, but also clarify the different pin functions (inc. shared pins). Maybe we need a pin-number-to-name list and a pin-name-to-function list that it can link to. Otherwise, just abandon all but QFN64 numbering? Also, should the list be sorted by function or by pin number, or by functional group? Maybe this can be dynamic on the web, but we need to decide for the PDF version too.
 
 .. rst-class:: break_before, ssp-landscape, break_after
 

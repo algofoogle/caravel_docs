@@ -32,6 +32,10 @@ As a padframe, Caravel offers easy-to-connect standard features such as GPIO pin
 
 As an :term:`SoC`, Caravel provides a wide range of optional functionality on-chip that can either be largely ignored or can be used for any of :term:`bringing up <bring-up>` your design, debugging and providing a diagnostic/maintenance interface, controlling different peripherals that your design can leverage, or even as a full microcontroller (including CPU with external firmware interface, basic UART, and SPI controller).
 
+.. todo::
+
+    Need a block diagram to show separation between SoC/chip and its pins on either side.
+
 
 
 Caravel Padframe General Features
@@ -39,24 +43,66 @@ Caravel Padframe General Features
 
 These features are universally available to any chip based on the Caravel frame, even without specific use of the **Management SoC**.
 
-*   **10mm² "user project wrapper" design area**.
-*   **Housekeeping SPI (HKSPI)** interface for an external SPI controller to assert debugging control over certain base configuration, debugging, and clocking of the chip.
-*   **38 GPIOs**:
+User project wrapper
+^^^^^^^^^^^^^^^^^^^^
 
-    *   Can be configured (and reconfigured via CPU firmware or HKSPI) to function as outputs, bidirectional, or inputs (including optional pull-up or pull-down).
-    *   33 support power-on default configuration, specified in silicon by the designer.
-    *   29 support direct pad connections for analog signals [#f1]_.
-    *   **For Caravan**: 11 are "bare analog" pads without GPIO circuitry and without ESD protection.
-*   **Dedicated clock input pin** (optional).
-*   **DLL (similar to a PLL) for clocking control** (or available to be used as an internal "DCO" ring-oscillator clock), delivering 2 independently-configurable clock sources, and the option to output clocks directly on GPIO pins.
-*   **POR (Power-On Reset) module**.
-*   **SPI pass-through** interface able to be driven via HKSPI to take control (for reading/writing) of a firmware SPI ROM connected to the Management SoC.
-*   **Support for digital, analog, and mixed-signal projects**.
-*   **4 power domains**; two intended as nominal 1.8V digital supplies, two intended as analog supplies in the range 1.8V to 5.5V.
+Caravel includes a **10mm² "user project wrapper" design area**. The ``user_project_wrapper`` is what a user submits as a fixed-area :term:`GDS` macro. It is then automatically integrated (by the Efabless chipIgnite submission process) into the rest of the Caravel chip harness to produce the final GDS that is submitted for fabrication. This design area, in the 130nm node, is enough for on the order of :tbc:`6 million transistors or 1 million logic gate primitives`.
+
+The designer can choose whether the design they include in the user project wrapper will interface with the Caravel SoC, the padframe GPIOs, the built-in clock sources, the :term:`PDN` (Power Delivery Network) or any combination of these. For advanced users ordering bare dice and implementing a highly-specialized design, the user design may even use none of these features (though this is not recommended).
+
+The user project wrapper provides **support for digital, analog, and mixed-signal projects**.
+
+
+Housekeeping SPI
+^^^^^^^^^^^^^^^^
+
+The chip's power-on state defaults to assigning 4 GPIOs as a **Housekeeping SPI (HKSPI)** interface for an external SPI controller to assert debugging control over certain base configuration, debugging, and clocking of the chip.
+
+This also includes **SPI pass-through**, able to be driven via HKSPI to take control (for reading/writing) of a firmware SPI ROM connected to the Management SoC.
+
+See: :doc:`housekeeping`
+
+
+38 GPIOs
+^^^^^^^^
+
+Caravel provides **38 GPIO pins** that can be used interchangeably by the user's own digital logic, the Caravel CPU, or in some cases as analog connections:
+
+*   These 38 can be configured (and reconfigured via CPU firmware or HKSPI) to function as outputs, bidirectional, or inputs (including optional pull-up or pull-down).
+*   They also have built-in ESD protection, level shifting, and buffering, thus simplifying the job of the designer.
+*   33 support power-on default configuration specified in silicon by the designer, while the remaining 5 have Caravel-dedicated power-on functions (that can be overridden by CPU firmware or HKSPI).
+*   29 optionally support direct pad connections for analog signals [#f1]_.
+*   **For Caravan**: 11 are "bare analog" pads without GPIO circuitry and without ESD protection.
+*   Some offer additional Caravel SoC "management" functions (such as UART and additional debug functions).
+
+See: :doc:`gpio`
+
+.. rubric:: Footnotes
+
+.. [#f1] Caravel direct analog pad connections include ESD protection which typically limits full swing signals to about 50MHz.
+
+
+Dedicated clock input and DLL/DCO configurable clocking
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Caravel and/or the user design can optionally receive (and modify) a clock signal via a dedicated clock input pin that includes circuitry for multiplying/dividing the input clock frequency.
 
 .. note::
 
     The DLL/DCO is inactive by default, passing the optional dedicated clock input directly through to the user project wrapper. If the DLL/DCO is to be used, it must be explicitly enabled via HKSPI or firmware running on the **Management SoC**. For more information, see the section on **Clocking, DLL and DCO**.
+
+See: :doc:`clocking`
+
+POR (Power-On Reset) module
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+See: :ref:`powerup`
+
+
+Four power domains
+^^^^^^^^^^^^^^^^^^
+
+Caravel provides **4 power domains**: two intended as nominal 1.8V digital supplies, two intended as analog supplies in the range 1.8V to 5.5V. It also includes |vddio| for setting the desired external digital logic level (as a reference voltage in the range 1.8V-5.5V) for compatibility with a wide range of device.
 
 
 
@@ -65,30 +111,78 @@ Caravel Management SoC Features
 
 The Management SoC's RISC-V CPU (RV32I) is built into the die area, adjacent the user project wrapper, and can be interfaced with your design, as well as externally to the chip.
 
-The SoC is generated using Litex and includes the following peripherals and capabilities that can be optionally enabled/disabled on subsets of the GPIO pins, to make the SoC useful both as a general-purpose microcontroller and a specialized test/debug interface for your design:
+The SoC is generated using :term:`Litex` and includes the following peripherals and capabilities that can be optionally enabled/disabled on subsets of the GPIO pins, to make the SoC useful both as a general-purpose microcontroller and a specialized test/debug interface for your design...
 
-*   **VexRiscv core**: VexRiscv minimal+debug configuration.
-*   **GPIO control**: Ability to reconfigure the 38 GPIOs (**27 for Caravan**), including taking over GPIOs as "management mode".
-*   **Logic Analyzer**: 128 internal IO pins that can optionally be connected with your design in the user project wrapper.
-*   **Wishbone master**: 32-bit Classic-Wishbone-based memory map expansion of the CPU.
-*   **UART** with fixed baud rate.
-*   **SRAM**: 1.5kBytes of local RAM scratch space.
-*   **SPI master** for direct control by user firmware.
-*   **6 user IRQs**, 3 internally-driven by the user project.
-*   **Dedicated firmware ROM SPI master** for XIP loading of firmware code from an external SPI memory into a local 16-word (64-byte) instruction cache.
-*   **Counter-timers**.
-*   **Single management GPIO pin**.
+
+VexRiscv RISC-V CPU core
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+The CPU core is a :term:`VexRiscv` minimal+debug configuration. Intended for use either as a microcontroller, general-purpose CPU, control or debug interface to the user design. It can be considered as a lightweight single-core bare-metal microcontroller, programmable in C or RISC-V assembly (RV32I, 32-bit instructions specifically), and it comprises:
+
+*   **Dedicated firmware ROM SPI master** for :term:`XIP` loading of firmware code from an external SPI memory into a local 16-word (64-byte) instruction cache.
+*   **1.5kByte** local SRAM for stack, scratch space/variables, or small high-speed in-memory executable subroutines.
+*   **Interrupt and** :tbc:`exception handling`.
 *   **Dedicated power domain**.
+*   **GPIO control**: Ability to reconfigure the 38 GPIOs (**27 for Caravan**), including taking over GPIOs as "management mode", either to activate SoC peripherals that have external interfaces, or for firmware to directly use some GPIOs.
+*   **Single management GPIO pin**. See: :ref:`mgmt_gpio`
+
+See: :doc:`firmware`
+
+The CPU core also has **access to a range of other SoC peripherals** as described below.
 
 .. note::
 
     If you don't intend to make use of the Management SoC at all, you can simply choose to not connect to its ports in the users project wrapper, and you can optionally tie its ``RESETb`` signal low externally to hold it in reset.
 
-.. todo::
-
-    Need a block diagram to show separation between SoC/chip and its pins on either side.
 
 
-.. rubric:: Footnotes
+Logic Analyzer interface
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. [#f1] Caravel direct analog pad connections include ESD protection which typically limits full swing signals to about 50MHz.
+The **Logic Analyzer** comprises 128 internal IO pins that can optionally be connected with your design in the user project wrapper. :todo:`Explain separate input, output, and OEB signals.`
+
+See: :doc:`logic-analyzer`
+
+Wishbone master
+^^^^^^^^^^^^^^^
+
+The user project wrapper has an incoming **Wishbone master** interface from the CPU. This includes the |clk1| signal. It is implemented as a 32-bit Classic-Wishbone-based memory map expansion of the CPU :tbc:`for addresses in the range` ``0x30000000`` -- ``0x300FFFFF``.
+
+See: :doc:`wishbone`
+
+UART
+^^^^
+
+The SoC includes a UART that is accessible only to the CPU. It can be enabled to take over two specific GPIO pins for transmit and/or receive, and it has the following features:
+
+*   Fixed baud rate proportional to 9,600 baud at a 10MHz core clock (i.e. 19,200 baud if the Caravel core clock is set to 20MHz).
+*   Fixed 8N1 configuration.
+*   16-byte FIFO for each of transmit and receive.
+*   TX/RX runs independently of the CPU.
+*   :tbc:`CPU can poll the FIFO state or enable an IRQ for the UART.`
+
+See: :doc:`uart`
+
+
+SPI Controller
+^^^^^^^^^^^^^^
+
+**SPI master** for direct control by user firmware.
+
+See: :doc:`spi-controller`
+
+
+6 user IRQs
+^^^^^^^^^^^
+
+*   3 internally-driven by the user project.
+*   2 externally-driven (optional) by GPIO pins.
+*   :tbc:`1 internally-driven by SoC peripherals.`
+
+See: :doc:`irq`
+
+
+Counter-timers
+^^^^^^^^^^^^^^
+
+See :doc:`counter-timer`

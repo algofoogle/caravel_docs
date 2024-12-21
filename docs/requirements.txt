@@ -3,4 +3,5 @@ sphinx-autobuild
 sphinxcontrib-wavedrom
 sphinx-wagtail-theme
 sphinx-new-tab-link
+weasyprint>=63.1  # Has a bug fix for SVGs with <symbol> tags.
 sphinx-simplepdf

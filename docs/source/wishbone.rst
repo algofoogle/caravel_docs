@@ -20,3 +20,10 @@
 
 Wishbone Interface
 ==================
+
+.. todo::
+   Note 1-million-cycle timeout.
+
+   ACK timing.
+
+   The need for ``volatile`` everywhere in C code.

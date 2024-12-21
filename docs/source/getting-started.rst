@@ -30,6 +30,8 @@ Block diagram
 caravel_user_project template
 -----------------------------
 
+.. _powerup:
+
 Power-up/boot process
 ---------------------
 

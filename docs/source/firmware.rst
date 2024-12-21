@@ -32,3 +32,8 @@ Writing and compiling basic firmware for the Caravel RISC-V CPU
 Writing and simulating testbenches with Verilog or Cocotb
 ---------------------------------------------------------
 
+Other important programming information
+---------------------------------------
+
+.. todo::
+   Note the need for ``volatile`` everywhere.

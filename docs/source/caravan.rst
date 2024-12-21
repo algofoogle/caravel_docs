@@ -23,6 +23,8 @@ Caravan Specifics
 
 This is a summary of all things that are common and different between Caravan and the normal Caravel.
 
+.. _caravan_common_features:
+
 Common features
 ---------------
 
