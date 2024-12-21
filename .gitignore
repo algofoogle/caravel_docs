@@ -1,2 +1,5 @@
 .venv
-docs/build
+docs/build/*
+!docs/build/simplepdf/
+docs/build/simplepdf/*
+!docs/build/simplepdf/caravel_frame_and_soc.pdf
