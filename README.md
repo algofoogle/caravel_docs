@@ -15,11 +15,26 @@ This is the Sphinx source code for new Caravel "readthedocs"-style documentation
 
 ## Setting up
 
+First, ensure you have installed Python 3.9 or above, and `make`. Then...
+
+### Linux
+
 ```bash
 python3 -m venv --prompt caravel_docs .venv
 source .venv/bin/activate
 pip install -r docs/requirements.txt
 ```
+
+### Windows (Powershell)
+
+```powershell
+python -m venv --prompt caravel_docs .venv
+.venv\scripts\Activate.ps1
+pip install -r docs/requirements.txt
+pip uninstall xcffib # Avoids "cannot load library 'libxcb.dll'"; see: https://github.com/Kozea/WeasyPrint/issues/475#issuecomment-308460385
+```
+
+NOTE: Throughout these instructions, you might need to replace `python3` with just `python` on Windows.
 
 
 ## Building and viewing the documentation
@@ -29,10 +44,9 @@ pip install -r docs/requirements.txt
 
 First:
 
-```bash
-source .venv/bin/activate
-cd docs
-```
+| Linux | Windows (Powershell) |
+|-|-|
+| `. .venv/bin/activate; cd docs` | `.venv\scripts\Activate.ps1; cd docs` |
 
 Then for each build:
 
@@ -110,6 +124,8 @@ Most of this stuff is defined/managed in [conf.py](docs/source/conf.py):
 
 
 # PDF generation
+
+NOTE: I've not yet managed to get the PDF generation to work natively on Windows, but some pointers to do this might be found [here](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows) and more-generally [here](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#installation), with some related discussion [here](https://github.com/Kozea/WeasyPrint/issues/1565).
 
 ## Overview
 
