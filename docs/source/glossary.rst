@@ -105,3 +105,9 @@ Glossary
 
    XIP
       Execute In Place: Code is directly loaded and executed from an external memory as needed, without the need for user-driven caching control, buffering, translation, logic, etc.
+
+   Active-low
+      A signal whose named intent/mode is considered to be asserted when the signal is low (i.e. logic 0, or GND), and deasserted when the signal is high (i.e. logic 1, or positive). Sometimes also referred to as "inverted logic" or "negative logic". Example: A device with an input signal name like ``reset_n`` (note the ``_n`` suffix) is considered to actively be in the "reset" state when the signal is low, and otherwise running normally (and not in reset) when the signal is high. A similar convention is ``resetb`` where the ``b`` suffix means ":term:`Bar`".
+
+   Bar
+      Used as a suffix (e.g. "Output Enable Bar"), this typically means the signal is ":term:`active-low`". In the name of a signal, this is often indicated by a ``b`` or ``_b`` suffix (e.g. ``oeb`` might mean "Output Enable Bar"), where the name would normally be rendered in a schematic with a horizontal line (or "bar") over the signal name.

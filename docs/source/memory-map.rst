@@ -20,3 +20,12 @@
 
 Registers and Memory Map
 ========================
+
+High-level memory map
+^^^^^^^^^^^^^^^^^^^^^
+
+.. todo::
+   Include general rows (e.g. 'GPIO config region') as well as some sub-rows that otherwise contain arrays of registers?
+
+Register list
+^^^^^^^^^^^^^

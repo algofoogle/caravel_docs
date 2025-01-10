@@ -21,6 +21,9 @@
 Advanced Guides
 ===============
 
+Caravel CPU code execution
+--------------------------
+
 Executing code from RAM
 -----------------------
 

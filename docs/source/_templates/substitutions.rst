@@ -9,3 +9,10 @@
 .. |upw|            replace:: :term:`User Project Wrapper`
 .. |mgmt_out|       replace:: :ref:`GPIO_MODE_MGMT_STD_OUTPUT`
 .. |vddio|          replace:: :ref:`vddio <vddio>`
+.. |hkspi|          replace:: :doc:`HKSPI <housekeeping>`
+.. |dll|            replace:: :ref:`DLL <dll>`
+.. |dco|            replace:: :ref:`DCO <dco>`
+.. |sck|            replace:: :ref:`SCK <sck>`
+.. |gpio|           replace:: :ref:`User GPIO pins <user_gpio>`
+.. |mgmt_gpio|      replace:: :ref:`Management GPIO pin <mgmt_gpio>`
+.. |user_defines|   replace:: :ref:`user_defines configuration <user_defines>`

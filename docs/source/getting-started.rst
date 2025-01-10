@@ -27,6 +27,14 @@ Essentials
 Block diagram
 -------------
 
+.. _user_project_wrapper:
+
+user_project_wrapper
+--------------------
+
+.. todo::
+   Is there a difference worth describing between user_project_wrapper and "user project area"? Technically they are different, but maybe it's always best to refer to "UPW" in all documentation and avoid "user project area".
+
 caravel_user_project template
 -----------------------------
 

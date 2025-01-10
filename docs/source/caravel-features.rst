@@ -43,14 +43,16 @@ Caravel Padframe General Features
 
 These features are universally available to any chip based on the Caravel frame, even without specific use of the **Management SoC**.
 
-User project wrapper
-^^^^^^^^^^^^^^^^^^^^
+Caravel user_project_wrapper
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Caravel includes a **10mm² "user project wrapper" design area**. The ``user_project_wrapper`` is what a user submits as a fixed-area :term:`GDS` macro. It is then automatically integrated (by the Efabless chipIgnite submission process) into the rest of the Caravel chip harness to produce the final GDS that is submitted for fabrication. This design area, in the 130nm node, is enough for on the order of :tbc:`6 million transistors or 1 million logic gate primitives`.
 
 The designer can choose whether the design they include in the user project wrapper will interface with the Caravel SoC, the padframe GPIOs, the built-in clock sources, the :term:`PDN` (Power Delivery Network) or any combination of these. For advanced users ordering bare dice and implementing a highly-specialized design, the user design may even use none of these features (though this is not recommended).
 
 The user project wrapper provides **support for digital, analog, and mixed-signal projects**.
+
+See: :ref:`user_project_wrapper`
 
 
 Housekeeping SPI
@@ -182,7 +184,7 @@ See: :doc:`spi-controller`
 See: :doc:`irq`
 
 
-Counter-timers
-^^^^^^^^^^^^^^
+Counter-timer
+^^^^^^^^^^^^^
 
-See :doc:`counter-timer`
+See: :doc:`counter-timer`

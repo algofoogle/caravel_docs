@@ -21,13 +21,19 @@
 Clocking and DLL/DCO
 ====================
 
-.. todo::
-   Put in DLL/DCO/clocking diagram inc. register names.
-
-.. todo::
-   Simplify the idea that there is a DCO, DLL, and configurable dividers (as well as bypass). Maybe the diagram above will do this. Otherwise it's confusing: The DCO can be 'divided', but with feedback it becomes a DLL.
-
 Caravel has a dedicated |clkin| input pin. While it is not mandatory to make use of this for any design submitted to chipIgnite, an external clock source is (in most cases) required in order for most parts of the Caravel SoC to be used.
+
+The Caravel SoC's RISC-V CPU derives its core clock from the |clkin| pin, as do the following peripherals that can be used by the CPU:
+
+*  :doc:`UART <uart>`
+*  :doc:`SPI Controller <spi-controller>`
+*  :doc:`Counter/Timer <counter-timer>`
+
+Note that |hkspi| can be used without using the Caravel |clkin| pin, as it has its own dedicated |sck| clock input.
+
+At power-on (and during any reset state) the clock signal present on the |clkin| pin is passed, unmodified, directly to the CPU and other dependent peripherals, and is also available as an incoming signal in the user project area via both |clk1| and |clk2|.
+
+The CPU or |hkspi| may modify this clock path, e.g. to enable the |dll| (and hence multiply and divide it to derive a different clock frequency), or to switch to using Caravel's internal ring oscillator (|dco|) as the clock source:
 
 .. figure:: _static/i/caravel-clocking-dll-dco.svg
    :width: 100%
@@ -37,19 +43,7 @@ Caravel has a dedicated |clkin| input pin. While it is not mandatory to make use
 
    Caravel clocking diagram
 
-The Caravel SoC's RISC-V CPU derives its core clock from the |clkin| pin, as do the following peripherals that can be used by the CPU:
-
-*  :doc:`UART <uart>`
-*  :doc:`SPI Controller <spi-controller>`
-*  :doc:`Counter/Timer <counter-timer>`
-
-Note that :doc:`HKSPI <housekeeping>` can be used without using the Caravel |clkin| pin, as it has its own dedicated :ref:`SCK <sck>` clock input.
-
-At power-on (and during any reset state) the clock signal present on the |clkin| pin is passed, unmodified, directly to the CPU and other dependent peripherals, and is also available as an incoming signal in the user project area via both |clk1| and |clk2|.
-
-The CPU or HKSPI may modify this clock path, e.g. to enable the :ref:`DLL <dll>` (and hence multiply and divide it to derive a different clock frequency), or to switch to using Caravel's internal ring oscillator (:ref:`DCO <dco>`) as the clock source.
-
-While the Caravel SoC has limited clock source options, if *your own user project* requires a clock source then you might choose to use any of:
+While the Caravel SoC uses specifically |clk1|, if *your own user project* requires a clock source then you might choose to use any of:
 
 *  :ref:`wb_clk_i` -- recommended for synchronous interfacing with the Caravel CPU (e.g. via :doc:`wishbone` or :doc:`logic-analyzer`).
 *  |clk2|
