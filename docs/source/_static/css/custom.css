@@ -53,3 +53,20 @@ td :last-child {
 .nbar {
     text-decoration: overline;
 }
+.pre {
+    border: 1px solid rgba(128,  0,  0, 0.2);
+    background-color: rgba(  0,  0,  0, 0.05);
+    border-radius: 4px;
+    padding: 2px;
+}
+.signal-port {
+    border: 1px solid rgba(  0,  0,128, 0.4);
+    background-color: rgba(  0,  0,128, 0.1);
+    color: #369;
+    font-size: 80%;
+}
+a.footnote-reference.brackets {
+    position: relative;
+    top: -0.5em;
+    font-size: 80%;
+}

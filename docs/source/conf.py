@@ -122,6 +122,12 @@ def nbar_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
     return [node], []
 roles.register_local_role('nbar', nbar_role)
 
+def port_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
+    """Role to interpret a Verilog signal/port name and format it nicely."""
+    node = nodes.inline(text, text, classes=['pre', 'signal-port'])
+    return [node], []
+roles.register_local_role('port', port_role)
+
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

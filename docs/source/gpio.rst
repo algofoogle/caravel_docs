@@ -62,6 +62,8 @@ Each of the 38 GPIOs provides multiple ports into the user project area to enabl
 Management GPIO pin
 -------------------
 
+.. _gpio_reconfiguration:
+
 User GPIO configuration by firmware or HKSPI
 --------------------------------------------
 
@@ -69,6 +71,8 @@ User GPIO configuration by firmware or HKSPI
 
 User GPIO power-on configuration by user_defines
 ------------------------------------------------
+
+.. _gpio_modes:
 
 Standard GPIO configuration mode constants
 ------------------------------------------
@@ -79,13 +83,6 @@ Standard GPIO configuration mode constants
    Should this table also include an expansion of the bitfields (per Mitch's table), and point out that different drive strengths and open-drain are possible (I think)?
 
 
-io_oeb conventions
-------------------
-
-.. todo::
-   Discuss precheck somewhere
-
-
 .. _GPIO_MODE_MGMT_STD_OUTPUT:
 
 GPIO_MODE_MGMT_STD_OUTPUT
@@ -93,7 +90,14 @@ GPIO_MODE_MGMT_STD_OUTPUT
 
 TBC
 
-GPIO pin names map
+io_oeb conventions
+------------------
+
+.. todo::
+   Discuss precheck somewhere
+
+
+GPIO pin ports map
 ------------------
 
 .. todo::

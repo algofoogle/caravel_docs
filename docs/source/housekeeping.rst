@@ -110,7 +110,7 @@ After ``CSB`` is set low, the SPI is always in the "command" state, awaiting a n
 
 The first transferred byte is the command word, interpreted according to the :ref:`housekeeping_spi_command_words`.
 
-.. list-table:: Housekeeping SPI command word definition
+.. list-table:: Housekeeping SPI command word definitions
     :name: housekeeping_spi_command_words
     :header-rows: 1
     :widths: auto
@@ -126,9 +126,9 @@ The first transferred byte is the command word, interpreted according to the :re
     * - ``11000000``
       - Simultaneous Read/Write in streaming mode
     * - ``11000100``
-      - Pass-through (management) Read/Write in streaming mode
+      - :ref:`Pass-through (Management) <hkspi-mgmt-pass>` Read/Write in streaming mode
     * - ``11000110``
-      - Pass-through (user) Read/Write in streaming mode
+      - :ref:`Pass-through (User) <hkspi-user-pass>` Read/Write in streaming mode
     * - ``10nnn000``
       - Write in n-byte mode (up to 7 bytes)
     * - ``01nnn000``
@@ -162,16 +162,18 @@ The CPU is brought out of reset, and starts executing instructions at the progra
 
 This mode allows the SPI flash to be programmed from the same SPI communication channel as the housekeeping SPI, without the need for additional wiring to the SPI flash chip.
 
-There are two pass-through modes.
-The first one corresponds to the primary SPI flash used by the management SoC.
-The second one corresponds to a secondary optional SPI flash that can be defined in the user project.
+There are two pass-through modes, as stated in the :ref:`housekeeping_spi_command_words`:
+
+*  .. _hkspi-mgmt-pass:
+   **Pass-through (Management)** mode is to the primary SPI flash used by the |soc| (|flash_spi|), as described above.
+*  .. _hkspi-user-pass:
+   **Pass-through (User)** mode :tbc:`is to` ``mprj_io[11:8]``. Consider a user design in the |upw| that uses these pins as its own implementation of an SPI controller and maps IOs 8-11 respectively to each of ``flash2_csb``, ``flash2_sck``, ``flash2_io0``, and ``flash2_io1`` -- :tbc:`Pass-through (User) mode can take over these pins and control an SPI device connected via these pins.`
 
 .. todo::
-    The below sentence may require some rephrasing.
+   The below sentence may require some rephrasing.
 
-The pass-through mode allows a communications chip external to the Caravel chip program either SPI flash chip from a host computer without requiring separate external access to the SPI flash.
-Both pass-through modes only connect to I/O pins 0 and 1 of the SPI flash chips, and so must operate only in the 4-pin SPI mode.
-The user project may elect to operate the SPI flash in quad mode using a 6-pin interface.
+Assuming SPI memory chips are connected to each of the interfaces described above, the pass-through modes allow a controller external to the Caravel chip to control/read/erase/program either SPI memory chip from a host computer without requiring a separate external bus. Both pass-through modes only connect to I/O pins 0 and 1 of the SPI interface, and so must operate only in the 4-pin (single-data-rate) SPI mode.
+The user project may, of course, elect to operate its own SPI implementation in QSPI mode by incorporating two additional pins into its design (for SPI I/O pins 2 and 3).
 
 Housekeeping SPI addresses
 --------------------------
@@ -188,11 +190,11 @@ While both the CPU and HKSPI can access the same registers that control/inspect 
    Make a more complete HKSPI register map, because this one is both incomplete and a bit murky when coupled with the table below it.
 
 .. figure:: _static/i/housekeeping_spi_register_map.svg
-    :name: housekeeping_spi_register_map
-    :alt: Housekeeping SPI register map
-    :align: center
+   :name: housekeeping_spi_register_map
+   :alt: Housekeeping SPI register map
+   :align: center
 
-    Housekeeping SPI register map
+   Housekeeping SPI register map
 
 
 .. list-table:: Housekeeping SPI registers

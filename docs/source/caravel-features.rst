@@ -22,11 +22,11 @@ Features of Caravel
 ===================
 
 .. todo::
-    Include a general summary in here of each of the features, then link to their respective sections, as this page sort of does: https://caravel-mgmt-soc-litex.readthedocs.io/en/latest/
+   Include a general summary in here of each of the features, then link to their respective sections, as this page sort of does: https://caravel-mgmt-soc-litex.readthedocs.io/en/latest/
 
 .. todo::
-    How do we offer a "quick-start, essentials-only, what you need to know" guide or summary on things?
-    Should it be the above proposed high-level list of features you need to know about and their default state, noting that their default state is a sensible starting point for maximal usability? **OR** should it be a summary panel at the start of every page: "The essentials you need to know about X: You don't need to worry about it". **OR** should both of these things be done?
+   How do we offer a "quick-start, essentials-only, what you need to know" guide or summary on things?
+   Should it be the above proposed high-level list of features you need to know about and their default state, noting that their default state is a sensible starting point for maximal usability? **OR** should it be a summary panel at the start of every page: "The essentials you need to know about X: You don't need to worry about it". **OR** should both of these things be done?
 
 As a padframe, Caravel offers easy-to-connect standard features such as GPIO pins, power delivery (optionally with multple power domains), clocking, and reset logic (both a dedicated reset pin, and a :term:`POR` circuit). These are well-characterized and qualified to reduce the overhead of the designer.
 
@@ -34,7 +34,7 @@ As an :term:`SoC`, Caravel provides a wide range of optional functionality on-ch
 
 .. todo::
 
-    Need a block diagram to show separation between SoC/chip and its pins on either side.
+   Need a block diagram to show separation between SoC/chip and its pins on either side.
 
 
 
@@ -70,12 +70,12 @@ See: :doc:`housekeeping`
 
 Caravel provides **38 GPIO pins** that can be used interchangeably by the user's own digital logic, the Caravel CPU, or in some cases as analog connections:
 
-*   These 38 can be configured (and reconfigured via CPU firmware or HKSPI) to function as outputs, bidirectional, or inputs (including optional pull-up or pull-down).
-*   They also have built-in ESD protection, level shifting, and buffering, thus simplifying the job of the designer.
-*   33 support power-on default configuration specified in silicon by the designer, while the remaining 5 have Caravel-dedicated power-on functions (that can be overridden by CPU firmware or HKSPI).
-*   29 optionally support direct pad connections for analog signals [#f1]_.
-*   **For Caravan**: 11 are "bare analog" pads without GPIO circuitry and without ESD protection.
-*   Some offer additional Caravel SoC "management" functions (such as UART and additional debug functions).
+*  These 38 can be configured (and reconfigured via CPU firmware or HKSPI) to function as outputs, bidirectional, or inputs (including optional pull-up or pull-down).
+*  They also have built-in ESD protection, level shifting, and buffering, thus simplifying the job of the designer.
+*  33 support power-on default configuration specified in silicon by the designer, while the remaining 5 have Caravel-dedicated power-on functions (that can be overridden by CPU firmware or HKSPI).
+*  29 optionally support direct pad connections for analog signals [#f1]_.
+*  **For Caravan**: 11 are "bare analog" pads without GPIO circuitry and without ESD protection.
+*  Some offer additional Caravel SoC "management" functions (such as UART and additional debug functions).
 
 See: :doc:`gpio`
 
@@ -91,7 +91,7 @@ Caravel and/or the user design can optionally receive (and modify) a clock signa
 
 .. note::
 
-    The DLL/DCO is inactive by default, passing the optional dedicated clock input directly through to the user project wrapper. If the DLL/DCO is to be used, it must be explicitly enabled via HKSPI or firmware running on the **Management SoC**. For more information, see the section on **Clocking, DLL and DCO**.
+   The DLL/DCO is inactive by default, passing the optional dedicated clock input directly through to the user project wrapper. If the DLL/DCO is to be used, it must be explicitly enabled via HKSPI or firmware running on the **Management SoC**. For more information, see the section on **Clocking, DLL and DCO**.
 
 See: :doc:`clocking`
 
@@ -121,12 +121,12 @@ VexRiscv RISC-V CPU core
 
 The CPU core is a :term:`VexRiscv` minimal+debug configuration. Intended for use either as a microcontroller, general-purpose CPU, control or debug interface to the user design. It can be considered as a lightweight single-core bare-metal microcontroller, programmable in C or RISC-V assembly (RV32I, 32-bit instructions specifically), and it comprises:
 
-*   **Dedicated firmware ROM SPI master** for :term:`XIP` loading of firmware code from an external SPI memory into a local 16-word (64-byte) instruction cache.
-*   **1.5kByte** local SRAM for stack, scratch space/variables, or small high-speed in-memory executable subroutines.
-*   **Interrupt and** :tbc:`exception handling`.
-*   **Dedicated power domain**.
-*   **GPIO control**: Ability to reconfigure the 38 GPIOs (**27 for Caravan**), including taking over GPIOs as "management mode", either to activate SoC peripherals that have external interfaces, or for firmware to directly use some GPIOs.
-*   **Single management GPIO pin**. See: :ref:`mgmt_gpio`
+*  **Dedicated firmware ROM SPI master** for :term:`XIP` loading of firmware code from an external SPI memory into a local 16-word (64-byte) instruction cache.
+*  **1.5kByte** local SRAM for stack, scratch space/variables, or small high-speed in-memory executable subroutines.
+*  **Interrupt and** :tbc:`exception handling`.
+*  **Dedicated power domain**.
+*  **GPIO control**: Ability to reconfigure the 38 GPIOs (**27 for Caravan**), including taking over GPIOs as "management mode", either to activate SoC peripherals that have external interfaces, or for firmware to directly use some GPIOs.
+*  **Single management GPIO pin**. See: :ref:`mgmt_gpio`
 
 See: :doc:`firmware`
 
@@ -134,7 +134,7 @@ The CPU core also has **access to a range of other SoC peripherals** as describe
 
 .. note::
 
-    If you don't intend to make use of the Management SoC at all, you can simply choose to not connect to its ports in the users project wrapper, and you can optionally tie its ``RESETb`` signal low externally to hold it in reset.
+   If you don't intend to make use of the Management SoC at all, you can simply choose to not connect to its ports in the users project wrapper, and you can optionally tie its ``RESETb`` signal low externally to hold it in reset.
 
 
 
@@ -157,11 +157,11 @@ UART
 
 The SoC includes a UART that is accessible only to the CPU. It can be enabled to take over two specific GPIO pins for transmit and/or receive, and it has the following features:
 
-*   Fixed baud rate proportional to 9,600 baud at a 10MHz core clock (i.e. 19,200 baud if the Caravel core clock is set to 20MHz).
-*   Fixed 8N1 configuration.
-*   16-byte FIFO for each of transmit and receive.
-*   TX/RX runs independently of the CPU.
-*   :tbc:`CPU can poll the FIFO state or enable an IRQ for the UART.`
+*  Fixed baud rate proportional to 9,600 baud at a 10MHz core clock (i.e. 19,200 baud if the Caravel core clock is set to 20MHz).
+*  Fixed 8N1 configuration.
+*  16-byte FIFO for each of transmit and receive.
+*  TX/RX runs independently of the CPU.
+*  :tbc:`CPU can poll the FIFO state or enable an IRQ for the UART.`
 
 See: :doc:`uart`
 
@@ -177,9 +177,9 @@ See: :doc:`spi-controller`
 6 user IRQs
 ^^^^^^^^^^^
 
-*   3 internally-driven by the user project.
-*   2 externally-driven (optional) by GPIO pins.
-*   :tbc:`1 internally-driven by SoC peripherals.`
+*  3 internally-driven by the user project.
+*  2 externally-driven (optional) by GPIO pins.
+*  :tbc:`1 internally-driven by SoC peripherals.`
 
 See: :doc:`irq`
 

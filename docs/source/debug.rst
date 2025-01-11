@@ -1,6 +1,3 @@
-.. Caravel Frame and SoC documentation master file, by sphinx-quickstart.
-   This file should at least contain the root `toctree` directive.
-
 .. raw:: html
 
    <!---
@@ -21,33 +18,10 @@
    # SPDX-License-Identifier: Apache-2.0
    -->
 
+Debug Port
+==========
 
-.. toctree::
-   :maxdepth: 2
+.. todo::
+   Confirm that the debug port is actually available, actually works, and matches the documentation given below.
 
-   overview
-   caravel-features
-   pinout
-   Getting Started <getting-started>
-   clocking
-   Firmware/Programming <firmware>
-   simulation
-   gpio
-   logic-analyzer
-   uart
-   wishbone
-   spi-controller
-   counter-timer
-   housekeeping
-   irq
-   memory-map
-   analog
-   advanced
-   Bringup (Caravel Eval) <bringup>
-   debug
-   caravan
-   caravel-mini
-   figures
-   specs
-   pcb
-   glossary
+The Caravel CPU supports debugging via the |debug| pin.
