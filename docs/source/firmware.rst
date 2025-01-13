@@ -21,10 +21,30 @@
 Firmware, Flash SPI, and Programming Guide
 ==========================================
 
+Use of the Caravel CPU and other SoC peripherals is optional. Complex user designs can be made that ignore the CPU and SoC completely, but they offer several other advantages also. You might want to use the CPU and |soc| for any of:
+
+*  :term:`Bring-up` and debugging, especially in a prototype where you need to be able to define and inspect internal signals, or otherwise alter aspects of how your design interfaces with the rest of the system and the outside world.
+*  As a general-purpose microcontroller, whether in combination with your design, or otherwise separately.
+*  As a supervisor to ensure proper operation of your design, especially to enable user project access to :io:`4:0` (i.e. |reserved_gpios|) if specifically required.
+*  Diagnostics and maintenance in the field.
+
+If you want the CPU to remain idle/unused, you should strap the |resetb| pin low (i.e. ensure the CPU is always held in reset).
+
+Otherwise, use of the CPU (or SoC typically) requires that the CPU is able to execute firmware code. This section covers:
+
+*  Hardware required to host firmware code that the CPU will execute.
+*  Writing C code that is compatible with the RISC-V CPU in general.
+*  References to specific C API calls that access hardware and functions of the SoC.
+*  Installing and using a compiler that targets the Caravel RISC-V CPU.
+*  Simulating execution of your C code on the CPU, and its interaction with the rest of the chip and with your user design.
+
+For details on how to actually deploy firmware code to a Caravel-based development board (with your fabricated chip) and test it, see: :doc:`bringup`.
+
 .. _firmware-spi:
 
 Firmware Flash SPI interface
 ----------------------------
+
 
 Writing and compiling basic firmware for the Caravel RISC-V CPU
 ---------------------------------------------------------------

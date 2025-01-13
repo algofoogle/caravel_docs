@@ -24,4 +24,9 @@ Debug Port
 .. todo::
    Confirm that the debug port is actually available, actually works, and matches the documentation given below.
 
-The Caravel CPU supports debugging via the |debug| pin.
+   This section needs more detail and hopefully an example.
+
+The Caravel CPU supports debugging via the |debug| pin. :tbc:`It can be accessed through a dedicated UART port configured as a Wishbone master.` The baud rate for the port is fixed; nominally i tis 9600 baud given a 10MHz SoC core clock.
+
+See the following reference for more information: `VexRiscv DebugPlugin <https://github.com/SpinalHDL/VexRiscv#debugplugin>`_
+

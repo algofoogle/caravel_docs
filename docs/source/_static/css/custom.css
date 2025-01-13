@@ -65,6 +65,10 @@ td :last-child {
     color: #369;
     font-size: 80%;
 }
+.signal-port-subscript {
+    color: #00c;
+    font-weight: bold;
+}
 a.footnote-reference.brackets {
     position: relative;
     top: -0.5em;

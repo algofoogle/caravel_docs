@@ -8,12 +8,12 @@
 .. |clk1|               replace:: :ref:`wb_clk_i`
 .. |clk2|               replace:: :ref:`user_clock2`
 .. |upw|                replace:: :term:`User Project Wrapper`
-.. |mgmt_out|           replace:: :ref:`GPIO_MODE_MGMT_STD_OUTPUT`
+.. |upw_ports|          replace:: |upw| edge ports
+.. |mgmt_out|           replace:: :ref:`GPIO_MODE_MGMT_STD_OUTPUT <GPIO_MODE_MGMT_STD_OUTPUT>`
 .. |vddio|              replace:: :ref:`vddio <vddio>`
 .. |hkspi|              replace:: :doc:`HKSPI <housekeeping>`
 .. |dll|                replace:: :ref:`DLL <dll>`
 .. |dco|                replace:: :ref:`DCO <dco>`
-.. |sck|                replace:: :ref:`SCK <sck>`
 .. |gpio|               replace:: :ref:`User GPIO pins <user_gpio>`
 .. |mgmt_gpio|          replace:: :ref:`Management GPIO pin <mgmt_gpio>`
 .. |user_defines|       replace:: :ref:`user_defines configuration <user_defines>`
@@ -23,3 +23,10 @@
 .. |soc|                replace:: Management SoC
 .. |uart|               replace:: :doc:`UART <uart>`
 .. |hkspi-user-pass|    replace:: :ref:`User SPI pass-thru <hkspi-user-pass>`
+.. |TBC|                replace:: :tbc:`(TBC! TO BE CONFIRMED or COMPLETED)`
+.. |user_mode|          replace:: :ref:`"USER" mode <user_mode>`
+.. |mgmt_mode|          replace:: :ref:`"MGMT" mode <mgmt_mode>`
+.. |reserved_gpios|     replace:: :ref:`GPIOs reserved for HKSPI and debugging <reserved_gpios>`
+
+.. |resetb|             replace:: :ref:`resetb <resetb>`
+.. |sck|                replace:: :ref:`SCK <sck>`

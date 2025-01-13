@@ -5,6 +5,9 @@
 
 This is the Sphinx source code for new Caravel "readthedocs"-style documentation intended to replace (or at least supersede) https://caravel-mgmt-soc-litex.readthedocs.io and https://caravel-harness.readthedocs.io
 
+> [!NOTE]
+> The official source of this documentation is https://github.com/efabless/caravel_docs but at times https://github.com/algofoogle/caravel_docs might be more recent.
+
 ## Decisions made
 
 *   Continue using Sphinx as the documentation compiler, for compatibility with existing docs.
@@ -111,7 +114,7 @@ I use VSCode. I have these extensions installed (but not sure whether I actually
 
 ## Special features of this doco
 
-Most of this stuff is defined/managed in [conf.py](docs/source/conf.py):
+Most of this stuff is defined/managed in [conf.py]:
 
 *   `.. todo::` admonitions have custom CSS to really make them stand out.
 *   The `tbc` role (e.g. `` You can :tbc:`push the button anytime` and it will work ``) marks a piece of text as 'To Be Confirmed', i.e. assumed to be correct, but needs to be verified.
@@ -120,7 +123,15 @@ Most of this stuff is defined/managed in [conf.py](docs/source/conf.py):
     *   `True`: Enable rendering of `todo` items, and visually mark/highlight `tbc` inline content.
     *   `False`: Prevent rendering of `todo` items, and apply a basic CSS style to `tbc` content so it doesn't stand out.
 *   [`docs/source/_templates/substitutions.rst`](docs/source/_templates/substitutions.rst) contains shorthands that can be included inline in pages, to replace them with more elaborate content (or later, alternative content if required), e.g. `|caravel_board|` becomes a nicer representation of the name of the board and a link to its definition.
+*   `io` role will take a given string (typically a number of Verilog vector index range) and format it in a special way as a GPIO identifier, e.g. `` :io:`25` `` will become `GPIO[25]` but with other smart formatting/referencing options in future. Likewise, `aio` will do the same for an `analog_io` identifier.
 
+# Style guide
+
+This list is a WIP:
+
+*   Formatting of `.rst` files should use indenting with spaces, and the indent step size is 3 spaces. This ensures proper formatting consistent with how RST typically is written.
+*   Make use of the [Special features](#special-features-of-this-doco) described above, to help optimize how content is written and provide flexibility when updates need to be made in future. For example, using substitutions can ensure an easy way to refactor content and improve how references/labels/formatting are handled without having to rewrite any pages.
+*   Prefer use of [RST Roles](https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html) (and define new ones in [conf.py], e.g. see the definition of `todo_role`) to help mark the proper 'disposition' (aka intent/function/type) of certain content.
 
 
 # PDF generation
@@ -184,3 +195,4 @@ sudo cp fonts/*.ttf /usr/share/fonts/truetype/roboto-mono
 [rst]: https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext
 [rstsh]: https://marketplace.visualstudio.com/items?itemName=trond-snekvik.simple-rst
 [esbonio]: https://marketplace.visualstudio.com/items?itemName=swyddfa.esbonio
+[conf.py]: docs/source/conf.py

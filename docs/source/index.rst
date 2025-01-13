@@ -32,7 +32,7 @@
    clocking
    Firmware/Programming <firmware>
    simulation
-   gpio
+   GPIO (General Purpose I/O) <gpio>
    logic-analyzer
    uart
    wishbone

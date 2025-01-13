@@ -122,11 +122,54 @@ def nbar_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
     return [node], []
 roles.register_local_role('nbar', nbar_role)
 
+# Tries to interpret the given content as a (say) Verilog port name and format
+# it in a way that helps the user recognize it as such (as well as its scope).
+# Later this could actually also build inline references if we wanted
+# (e.g. to link to the definition of a port in a module, to elaborate
+# vector range indices)...
 def port_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
     """Role to interpret a Verilog signal/port name and format it nicely."""
     node = nodes.inline(text, text, classes=['pre', 'signal-port'])
     return [node], []
 roles.register_local_role('port', port_role)
+
+# Allows this:
+#   :io:`25`            or  :aio:`18`
+# ...to become equivalent to:
+#   :port:`GPIO[25]`    or  :port:`analog_io[18]`
+def io_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
+    """Role to wrap content as a subscript in a general representation of a GPIO name."""
+    label    = 'analog_io' if name == 'aio' else 'GPIO'
+    subclass = 'analog-io' if name == 'aio' else 'gpio'
+    # node = nodes.inline(text, f"GPIO[{text}]",      classes=['pre', 'signal-port', 'gpio-port'])
+    outer = nodes.inline(text=f"{label}[", classes=['pre', 'signal-port', f"{subclass}-port"])
+    inner = nodes.inline(text=text, classes=['signal-port-subscript'])
+    # Append inner inside outer:
+    outer += inner
+    # Append another text node inside outer (after inner):
+    outer += nodes.Text("]")
+    return [outer], []
+roles.register_local_role('io',  io_role)
+roles.register_local_role('aio', io_role)
+
+# def refcode_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
+#     refid = nodes.make_id(text)
+#     targetnode = nodes.target('', '', ids=[refid])
+#     targetnode += nodes.literal('', text)
+#     # inliner.document.note_indirect_target(targetnode)
+#     return [targetnode], []
+# roles.register_local_role('refcode', refcode_role)
+
+def refcode_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
+    refid = nodes.make_id(text)
+    targetnode = nodes.target('', '', ids=[refid], names=[text])
+    # refnode = nodes.reference(rawtext, text, refid=refid, **options)
+    # breakpoint()
+    # targetnode += nodes.literal('', text)
+    # inliner.document.note_indirect_target(targetnode)
+    # inliner.document.note_refname(refnode)
+    return [targetnode], []
+roles.register_local_role('refcode', refcode_role)
 
 
 # -- Options for HTML output -------------------------------------------------

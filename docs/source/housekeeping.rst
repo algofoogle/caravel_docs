@@ -55,26 +55,26 @@ Housekeeping SPI pins
    :header-rows: 1
    :widths: auto
 
-   * - GPIO pin
-     - HKSPI pin
-     - Dir
-     - Function
-   * - ``mprj_io[1]``
-     - :ref:`SDO <sdo>`
-     - Output
-     - Serial data out, clocked out on falling edge of ``SCK``
-   * - ``mprj_io[2]``
-     - :ref:`SDI <sdi>`
-     - Input
-     - Serial data in, clocked in on rising edge of ``SCK``
-   * - ``mprj_io[3]``
-     - :ref:`CSB <csb>`
-     - Input
-     - "Chip Select bar" (falling edge starts an HKSPI transaction)
-   * - ``mprj_io[4]``
-     - :ref:`SCK <sck>`
-     - Input
-     - Serial clock.
+   *  -  GPIO pin
+      -  HKSPI pin
+      -  Dir
+      -  Function
+   *  -  ``mprj_io[1]``
+      -  :ref:`SDO <sdo>`
+      -  Output
+      -  Serial data out, clocked out on falling edge of ``SCK``
+   *  -  ``mprj_io[2]``
+      -  :ref:`SDI <sdi>`
+      -  Input
+      -  Serial data in, clocked in on rising edge of ``SCK``
+   *  -  ``mprj_io[3]``
+      -  :ref:`CSB <csb>`
+      -  Input
+      -  "Chip Select bar" (falling edge starts an HKSPI transaction)
+   *  -  ``mprj_io[4]``
+      -  :ref:`SCK <sck>`
+      -  Input
+      -  Serial clock.
 
 Housekeeping SPI protocol definition
 ------------------------------------
@@ -85,12 +85,12 @@ Each byte is input MSB (most-significant-bit) first.
 Every command sequence requires one command word (8 bits), followed by one address word (8 bits), followed by one or more data words (8 bits each), according to the data transfer modes described in :ref:`housekeeping_spi_modes`.
 
 .. figure:: _static/i/housekeeping_spi_signalling.svg
-    :width: 100%
-    :name: housekeeping_spi_signalling
-    :alt: Housekeeping SPI signalling
-    :align: center
+   :width: 100%
+   :name: housekeeping_spi_signalling
+   :alt: Housekeeping SPI signalling
+   :align: center
 
-    Housekeeping SPI signalling
+   Housekeeping SPI signalling
 
 Addresses are read in sequence from lower values to higher values.
 
@@ -111,30 +111,30 @@ After ``CSB`` is set low, the SPI is always in the "command" state, awaiting a n
 The first transferred byte is the command word, interpreted according to the :ref:`housekeeping_spi_command_words`.
 
 .. list-table:: Housekeeping SPI command word definitions
-    :name: housekeeping_spi_command_words
-    :header-rows: 1
-    :widths: auto
+   :name: housekeeping_spi_command_words
+   :header-rows: 1
+   :widths: auto
 
-    * - Word
-      - Meaning
-    * - ``00000000``
-      - No operation
-    * - ``10000000``
-      - Write in streaming mode
-    * - ``01000000``
-      - Read in streaming mode
-    * - ``11000000``
-      - Simultaneous Read/Write in streaming mode
-    * - ``11000100``
-      - :ref:`Pass-through (Management) <hkspi-mgmt-pass>` Read/Write in streaming mode
-    * - ``11000110``
-      - :ref:`Pass-through (User) <hkspi-user-pass>` Read/Write in streaming mode
-    * - ``10nnn000``
-      - Write in n-byte mode (up to 7 bytes)
-    * - ``01nnn000``
-      - Read in n-byte mode (up to 7 bytes)
-    * - ``11nnn000``
-      - Simultaneous Read/Write in n-byte mode (up to 7 bytes)
+   *  -  Word
+      -  Meaning
+   *  -  ``00000000``
+      -  No operation
+   *  -  ``10000000``
+      -  Write in streaming mode
+   *  -  ``01000000``
+      -  Read in streaming mode
+   *  -  ``11000000``
+      -  Simultaneous Read/Write in streaming mode
+   *  -  ``11000100``
+      -  :ref:`Pass-through (Management) <hkspi-mgmt-pass>` Read/Write in streaming mode
+   *  -  ``11000110``
+      -  :ref:`Pass-through (User) <hkspi-user-pass>` Read/Write in streaming mode
+   *  -  ``10nnn000``
+      -  Write in n-byte mode (up to 7 bytes)
+   *  -  ``01nnn000``
+      -  Read in n-byte mode (up to 7 bytes)
+   *  -  ``11nnn000``
+      -  Simultaneous Read/Write in n-byte mode (up to 7 bytes)
 
 .. note:: All other words are reserved and act as no-operation if not defined by the SPI responder module.
 
@@ -165,8 +165,11 @@ This mode allows the SPI flash to be programmed from the same SPI communication 
 There are two pass-through modes, as stated in the :ref:`housekeeping_spi_command_words`:
 
 *  .. _hkspi-mgmt-pass:
+
    **Pass-through (Management)** mode is to the primary SPI flash used by the |soc| (|flash_spi|), as described above.
+
 *  .. _hkspi-user-pass:
+
    **Pass-through (User)** mode :tbc:`is to` ``mprj_io[11:8]``. Consider a user design in the |upw| that uses these pins as its own implementation of an SPI controller and maps IOs 8-11 respectively to each of ``flash2_csb``, ``flash2_sck``, ``flash2_io0``, and ``flash2_io1`` -- :tbc:`Pass-through (User) mode can take over these pins and control an SPI device connected via these pins.`
 
 .. todo::
@@ -198,64 +201,64 @@ While both the CPU and HKSPI can access the same registers that control/inspect 
 
 
 .. list-table:: Housekeeping SPI registers
-    :name: housekeeping_spi_registers
-    :widths: auto
+   :name: housekeeping_spi_registers
+   :widths: auto
 
-    * - Name
-      - Register address
-      - Description
-    * - manufacturer_ID
-      - ``0x01`` `(low 4 bits)` and ``0x02``
-      - The 12-bit manufacturer ID for efabless is ``0x456``
-    * - product_ID
-      - ``0x03``
-      - The product ID for the Caravel harness chip is 0x10
-    * - user_project_ID
-      - ``0x04`` to ``0x07``
-      - The 4-byte (32bit) user project ID is metal-mask programmed on each project before tapeout, with a unique number given to each user project.
-    * - PLL enable
-      - ``0x08`` `bit 0`
-      - This bit enables the digital frequency-locked-loop clock multiplier.
-        The enable should be applied prior to turning off the PLL bypass to allow the PLL time to stabilize before using it to drive the CPU clock.
-    * - PLL DCO enable
-      - ``0x08`` `bit 1`
-      - The PLL can be run in DCO mode, in which the feedback loop to the driving clock is removed, and the system operates in free-running mode, driven by the ring oscillator which can be tuned between approximately 90 to 200MHz by setting the trim bits (:ref:`check PLL trim <housekeeping_reg_pll_trim>`) :tbc:`(NEED TO UPDATE THIS TO MATCH LEO'S RECENT CHARACTERIZATION and do some more char)`
-    * - PLL bypass
-      - ``0x09`` `bit 0`
-      - When enabled, the PLL bypass switches the clock source of the CPU from the PLL output to the external CMOS clock (pin ``C9``).
-        The default value is ``0x1`` (CPU clock source is the external CMOS clock).
-    * - CPU IRQ
-      - ``0x0A`` `bit 0`
-      - This is a dedicated manual interrupt driving the CPU IRQ channel 6.
-        The bit is not self-resetting, so while the rising edge will trigger an interrupt, the signal must be manually set to zero before it can trigger another interrupt.
-    * - CPU reset
-      - ``0x0B`` `bit 0`
-      - The CPU reset bit puts the entire CPU into a reset state.
-        This bit is not self-resetting and must be set back to zero manually to clear the reset state
-    * - CPU trap
-      - ``0x0C`` `bit 0`
-      - If the CPU has stopped after encountering an error, it will raise the trap signal.
-        The trap signal can be configured to be read from a GPIO pin, but as the GPIO state is potentially unknowable, the housekeeping SPI can be used to determine the true trap state.
-    * - .. _housekeeping_reg_pll_trim:
+   *  -  Name
+      -  Register address
+      -  Description
+   *  -  manufacturer_ID
+      -  ``0x01`` `(low 4 bits)` and ``0x02``
+      -  The 12-bit manufacturer ID for efabless is ``0x456``
+   *  -  product_ID
+      -  ``0x03``
+      -  The product ID for the Caravel harness chip is 0x10
+   *  -  user_project_ID
+      -  ``0x04`` to ``0x07``
+      -  The 4-byte (32bit) user project ID is metal-mask programmed on each project before tapeout, with a unique number given to each user project.
+   *  -  PLL enable
+      -  ``0x08`` `bit 0`
+      -  This bit enables the digital frequency-locked-loop clock multiplier.
+         The enable should be applied prior to turning off the PLL bypass to allow the PLL time to stabilize before using it to drive the CPU clock.
+   *  -  PLL DCO enable
+      -  ``0x08`` `bit 1`
+      -  The PLL can be run in DCO mode, in which the feedback loop to the driving clock is removed, and the system operates in free-running mode, driven by the ring oscillator which can be tuned between approximately 90 to 200MHz by setting the trim bits (:ref:`check PLL trim <housekeeping_reg_pll_trim>`) :tbc:`(NEED TO UPDATE THIS TO MATCH LEO'S RECENT CHARACTERIZATION and do some more char)`
+   *  -  PLL bypass
+      -  ``0x09`` `bit 0`
+      -  When enabled, the PLL bypass switches the clock source of the CPU from the PLL output to the external CMOS clock (pin ``C9``).
+         The default value is ``0x1`` (CPU clock source is the external CMOS clock).
+   *  -  CPU IRQ
+      -  ``0x0A`` `bit 0`
+      -  This is a dedicated manual interrupt driving the CPU IRQ channel 6.
+         The bit is not self-resetting, so while the rising edge will trigger an interrupt, the signal must be manually set to zero before it can trigger another interrupt.
+   *  -  CPU reset
+      -  ``0x0B`` `bit 0`
+      -  The CPU reset bit puts the entire CPU into a reset state.
+         This bit is not self-resetting and must be set back to zero manually to clear the reset state
+   *  -  CPU trap
+      -  ``0x0C`` `bit 0`
+      -  If the CPU has stopped after encountering an error, it will raise the trap signal.
+         The trap signal can be configured to be read from a GPIO pin, but as the GPIO state is potentially unknowable, the housekeeping SPI can be used to determine the true trap state.
+   *  -  .. _housekeeping_reg_pll_trim:
 
-        PLL trim
-      - ``0x0D`` `(all bits)` to ``0x10`` `(lower two bits)`
-      - The 26-bit trim value can adjust the DCO frequency over a factor of about two from the slowest (trim value ``0x3ffffff``) to the fastest (trim value ``0x0``).
-        Default value is ``0x3ffefff`` (1 step higher than the slowest trim).
-        Note that this is a thermometer-code trim, where each bit provides an additional (approximately) 250ps delay (on top of a fixed delay of 4.67ns).
-        The fastest output frequency is approximately 215MHz while the slowest output frequency is approximately 90MHz (:ref:`check PLL trim <housekeeping_reg_pll_trim>`) :tbc:`(NEED TO UPDATE THIS TO MATCH LEO'S RECENT CHARACTERIZATION and do some more char)`
-    * - PLL output divider
-      - ``0x11`` `bits 2-0`
-      - The PLL output can be divided down by an integer divider to provide the core clock frequency.
-        This 3-bit divider can generate a clock divided by 2 to 7.
-        Values 0 and 1 both pass the undivided PLL clock directly to the core (and should not be used, as the processor does not operate at these frequencies).
-    * - PLL output divider (2)
-      - ``0x11`` `bits 5-3`
-      - The PLL 90-degree phase output is passed through an independent 3-bit integer clock divider and provided to the user project space as a secondary clock.
-        Values 0 and 1 both pass the undivided PLL clock, while values 2 to 7 pass the clock divided by 2 to 7, respectively.
-    * - PLL feedback divider
-      - ``0x12`` `bits 4-0`
-      - The PLL operates by comparing the input clock (pin ``C9``) rate to the rate of the PLL clock divided by the feedback divider value (when running in PLL mode, not DCO mode).
-        The feedback divider must be set such that the external clock rate multiplied by the feedback divider value falls between 90 and 214 MHz (preferably centered on this range, or approximately 150 MHz) (:ref:`check PLL trim <housekeeping_reg_pll_trim>`) :tbc:`(NEED TO UPDATE THIS, and the calculation below, TO MATCH LEO'S RECENT CHARACTERIZATION and do some more char)`.
-        For example, when using an 8 MHz external clock, the divider should be set to 19 (``19 * 8 = 152``).
-        The DCO range and the number of bits of the feedback divider implies that the external clock should be no slower than around 4 to 5 MHz.
+         PLL trim
+      -  ``0x0D`` `(all bits)` to ``0x10`` `(lower two bits)`
+      -  The 26-bit trim value can adjust the DCO frequency over a factor of about two from the slowest (trim value ``0x3ffffff``) to the fastest (trim value ``0x0``).
+         Default value is ``0x3ffefff`` (1 step higher than the slowest trim).
+         Note that this is a thermometer-code trim, where each bit provides an additional (approximately) 250ps delay (on top of a fixed delay of 4.67ns).
+         The fastest output frequency is approximately 215MHz while the slowest output frequency is approximately 90MHz (:ref:`check PLL trim <housekeeping_reg_pll_trim>`) :tbc:`(NEED TO UPDATE THIS TO MATCH LEO'S RECENT CHARACTERIZATION and do some more char)`
+   *  -  PLL output divider
+      -  ``0x11`` `bits 2-0`
+      -  The PLL output can be divided down by an integer divider to provide the core clock frequency.
+         This 3-bit divider can generate a clock divided by 2 to 7.
+         Values 0 and 1 both pass the undivided PLL clock directly to the core (and should not be used, as the processor does not operate at these frequencies).
+   *  -  PLL output divider (2)
+      -  ``0x11`` `bits 5-3`
+      -  The PLL 90-degree phase output is passed through an independent 3-bit integer clock divider and provided to the user project space as a secondary clock.
+         Values 0 and 1 both pass the undivided PLL clock, while values 2 to 7 pass the clock divided by 2 to 7, respectively.
+   *  -  PLL feedback divider
+      -  ``0x12`` `bits 4-0`
+      -  The PLL operates by comparing the input clock (pin ``C9``) rate to the rate of the PLL clock divided by the feedback divider value (when running in PLL mode, not DCO mode).
+         The feedback divider must be set such that the external clock rate multiplied by the feedback divider value falls between 90 and 214 MHz (preferably centered on this range, or approximately 150 MHz) (:ref:`check PLL trim <housekeeping_reg_pll_trim>`) :tbc:`(NEED TO UPDATE THIS, and the calculation below, TO MATCH LEO'S RECENT CHARACTERIZATION and do some more char)`.
+         For example, when using an 8 MHz external clock, the divider should be set to 19 (``19 * 8 = 152``).
+         The DCO range and the number of bits of the feedback divider implies that the external clock should be no slower than around 4 to 5 MHz.
