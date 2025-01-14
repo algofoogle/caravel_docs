@@ -23,6 +23,13 @@
 Caravel Overview
 ================
 
+.. figure:: _static/i/caravel-floorplan.svg
+      :name: caravel_floorplan
+      :alt: Caravel Floorplan
+      :align: center
+
+      Caravel die floorplan
+
 .. todo::
    Include a summary like what the caravel_datasheet_2 currently has.
 
@@ -45,13 +52,6 @@ Designing and fabricating an ASIC with `Efabless chipIgnite <https://efabless.co
 
 .. todo::
    Make it clear that there's a "minimal" start point that allows you to ignore most of the rest of the SoC stuff. Perhaps have a panel like this one that points to a quick-start or basic guide. Otherwise the SoC block diagram looks complicated. Maybe having a simple block diagram (that abstracts the SoC away) will go well adjacent the following die floorplan diagram...
-
-.. figure:: _static/i/caravel-floorplan.svg
-      :name: caravel_floorplan
-      :alt: Caravel Floorplan
-      :align: center
-
-      Caravel die floorplan
 
 .. todo::
    Clarify that the user_project_wrapper is what you submit, but it's also a part of the overall frame that gets replaced by your own submission.

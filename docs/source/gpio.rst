@@ -29,6 +29,9 @@ In the Caravel context, "General Purpose Input/Output" (or GPIO) most often refe
 .. todo::
    Explain how it's useful that pins can be reconfigured and taken over, but also that this is relatively slow to do (whether via firmware or HKSPI).
 
+.. seealso::
+   :doc:`pinout`
+      List of all the Caravel chip external pins (including GPIO pins), named by function.
 
 .. _user_gpio:
 
@@ -50,11 +53,11 @@ Each of the 38 GPIOs provides multiple ports into the user project area to enabl
 *  All 38 provide ``io_in[*]`` (input digital signal paths), ``io_out[*]`` (output digital signal paths), and ``io_oeb[*]`` ("Output Enable :term:`Bar`" for setting the signal directions). Note that, at any given moment, whichever of these paths are actually usable or meaningful depends on what mode the pin is configured for. For example, ``io_oeb`` has no effect on changing the pin direction if the pin is already configured as an output.
 *  The 29 that are analog-capable also provide ``analog_io[*]`` ports.
 
+.. note::
+   ``io_in`` always has an active input buffer that feeds the digital logic state of the pin back into the user project area depending on the voltage present on the pad :tbc:`(does it definitely? Are there cases where this is not true?)`
+
 .. todo::
    Come up with a concise way to represent all the combinations, inc. for pull-up/down, and buffer states in various modes (e.g. analog).
-
-.. tbc::
-   ``io_in`` always has an active input buffer that feeds the digital logic state of the pin back into the user project area depending on the voltage present on the pad :tbc:`(does it definitely? Are there cases where this is not true?)`
 
 .. todo::
    Explain that io_oeb has certain conventions depending on intended mode and pull-up/down behaviour.

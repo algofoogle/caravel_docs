@@ -27,6 +27,8 @@
 .. |user_mode|          replace:: :ref:`"USER" mode <user_mode>`
 .. |mgmt_mode|          replace:: :ref:`"MGMT" mode <mgmt_mode>`
 .. |reserved_gpios|     replace:: :ref:`GPIOs reserved for HKSPI and debugging <reserved_gpios>`
+.. |rv32i|              replace:: :term:`RV32I`
+.. |esd|                replace:: :term:`ESD`
 
 .. |resetb|             replace:: :ref:`resetb <resetb>`
 .. |sck|                replace:: :ref:`SCK <sck>`

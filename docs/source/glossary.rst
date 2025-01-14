@@ -111,3 +111,12 @@ Glossary
 
    Bar
       Used as a suffix (e.g. "Output Enable Bar"), this typically means the signal is ":term:`active-low`". In the name of a signal, this is often indicated by a ``b`` or ``_b`` suffix (e.g. ``oeb`` might mean "Output Enable Bar"), where the name would normally be rendered in a schematic with a horizontal line (or "bar") over the signal name.
+
+   ISA
+      Instruction Set Architecture.
+
+   RV32I
+      A particular variant of the RISC-V :term:`ISA`, denoting a RISC-V core that uses 32-bit addressing and instructions (no compressed instructions), with basic integer operations (no hardware multiply/divide or floating-point).
+
+   ESD
+      Electrostatic Discharge. Often used in the context of "ESD Protection", i.e. dedicated circuits that help protect integrated circuits by suppressing high voltage spikes on chip pins, that can resulting from static electric charges that build up during the handling of parts.

@@ -22,9 +22,6 @@ Caravel Pinouts
 ===============
 
 
-Caravel QFN-64 pinout
----------------------
-
 .. figure:: _static/i/caravel-qfn-pinout.svg
       :name: caravel-qfn-pinout
       :alt: Caravel QFN64 pinout
@@ -39,7 +36,7 @@ All chips fabricated using the Caravel harness have a standard pinout with some 
 
 Caravel chips can be ordered in a 64-pin :term:`QFN` package, or as bare dice (unpackaged, bare silicon chips).
 
-Older generations of chipIgnite and the Open MPW shuttles also supplied :term:`WLCSP` packaged parts.
+Older generations of chipIgnite and the Open MPW shuttles also supplied :term:`WLCSP` packaged parts. These are no longer available with the standard chipIgnite prototyping service.
 
 .. todo::
    Work out the best way to present the pin placement/numbering for different packages, but also clarify the different pin functions (inc. shared pins). Maybe we need a pin-number-to-name list and a pin-name-to-function list that it can link to. Otherwise, just abandon all but QFN64 numbering? Also, should the list be sorted by function or by pin number, or by functional group? Maybe this can be dynamic on the web, but we need to decide for the PDF version too.
@@ -114,7 +111,7 @@ Caravel pins and functions
    ``flash_io3``",Digital I/O,[#f6]_
    17,,,,".. _vddio:
 
-   ``vddio``",3.3V Power,ESD and padframe power supply [#f7]_
+   ``vddio``",3.3V Power,|esd| and padframe power supply [#f7]_
    18,,,,".. _vccd:
 
    ``vccd``",1.8V Power,|soc| digital power supply
@@ -148,7 +145,7 @@ Caravel pins and functions
    ``gpio``",Digital I/O,|mgmt_gpio|/:tbc:`user power enable`
    29,,,,".. _vssio:
 
-   ``vssio``",Ground,ESD and padframe ground [#f7]_
+   ``vssio``",Ground,|esd| and padframe ground [#f7]_
    30,,,,".. _vdda:
 
    ``vdda``",3.3V Power,|soc| analog power supply
@@ -226,9 +223,7 @@ Caravel pins and functions
    ``mprj_io[12]``",Digital I/O or Analog,:io:`12` [#f2]_ or :aio:`5` [#f4]_,".. _irq2:
 
    ``irq2``",DI :tbc:`??`,:tbc:`External interrupt request` :doc:`IRQ <irq>`
-   47,,,,".. _vdda1:
-
-   ``vdda1``",3.3V Power,|upw| analog power supply 1
+   47,,,,"``vdda1``",3.3V Power,|upw| analog power supply 1
    48,".. _mprj_io13:
 
    ``mprj_io[13]``",Digital I/O or Analog,:io:`13` [#f2]_ or :aio:`6` [#f4]_,".. _trap:
@@ -247,9 +242,7 @@ Caravel pins and functions
    ``mprj_io[15]``",Digital I/O or Analog,:io:`15` [#f2]_ or :aio:`8` [#f4]_,".. _mprj_clock2:
 
    ``mprj_clock2``",Digital out,Clock monitoring output for user_clock2
-   52,,,,".. _vssa1:
-
-   ``vssa1``",Ground,|upw| analog ground 1
+   52,,,,"``vssa1``",Ground,|upw| analog ground 1
    53,".. _mprj_io16:
 
    ``mprj_io[16]``",Digital I/O or Analog,:io:`16` [#f1]_ or :aio:`9` [#f4]_,,,
@@ -259,9 +252,7 @@ Caravel pins and functions
    55,".. _mprj_io18:
 
    ``mprj_io[18]``",Digital I/O or Analog,:io:`18` [#f1]_ or :aio:`11` [#f4]_,,,
-   56,,,,".. _vssio:
-
-   ``vssio``",Ground,ESD and padframe ground [#f7]_
+   56,,,,"``vssio``",Ground,|esd| and padframe ground [#f7]_
    57,".. _mprj_io19:
 
    ``mprj_io[19]``",Digital I/O or Analog,:io:`19` [#f1]_ or :aio:`12` [#f4]_,,,
@@ -283,9 +274,7 @@ Caravel pins and functions
    63,,,,".. _vccd2:
 
    ``vccd2``",1.8V Power,|upw| digital power supply 2
-   64,,,,".. _vddio:
-
-   ``vddio``",3.3V Power,ESD and padframe power supply [#f7]_
+   64,,,,"``vddio``",3.3V Power,|esd| and padframe power supply [#f7]_
 
 .. [#f1] **GPIOs** are General purpose configurable digital I/O with pullup/pulldown, input/output/bidirectional, enable/disable, and slew rate control. GPIO pins are shared between the user project area and the management SoC: any configured in |user_mode| are directly connected/controlled via logic in the :ref:`user_project_wrapper`; any configured in |mgmt_mode| are directly under control of the Management SoC, *plus* their respective "Mgmt function" (if any) can optionally also be enabled. The power-on :ref:`mode configuration <gpio_modes>` of most GPIO pins is mask-programmed, defined by |user_defines| during tapeout. **NOTE**: Some GPIOs can be configured for direct "analog" connections [#f4]_
 
@@ -299,7 +288,7 @@ Caravel pins and functions
 
 .. [#f6] :tbc:`For more information on QSPI and the two additional flash IO pins,` see: https://github.com/efabless/caravel/blob/27cbe49c90ba5362ad52c9968dd98e035c30c74f/verilog/rtl/housekeeping.v#L776-L793
 
-.. [#f7] ``vddio`` sets the digital I/O 'high' voltage level, automatically handling level shifting. ``vddio`` (supply) and ``vssio`` (ground) are also connected to pad clamping diodes for ESD protection. ``vddio`` is nominally 3.3V; see also: :doc:`specs`.
+.. [#f7] ``vddio`` sets the digital I/O 'high' voltage level, automatically handling level shifting. ``vddio`` (supply) and ``vssio`` (ground) are also connected to pad clamping diodes for |esd| protection. ``vddio`` is nominally 3.3V; see also: :doc:`specs`.
 
 .. [#f8] :tbc:`Caravel Registers TRM says this is not available;` See: ``reg_clk_out_dest``
 

@@ -71,17 +71,17 @@ See: :doc:`housekeeping`
 Caravel provides **38 GPIO pins** that can be used interchangeably by the user's own digital logic, the Caravel CPU, or in some cases as analog connections:
 
 *  These 38 can be configured (and reconfigured via CPU firmware or HKSPI) to function as outputs, bidirectional, or inputs (including optional pull-up or pull-down).
-*  They also have built-in ESD protection, level shifting, and buffering, thus simplifying the job of the designer.
+*  They also have built-in |esd| protection, level shifting, and buffering, thus simplifying the job of the designer.
 *  33 support power-on default configuration specified in silicon by the designer, while the remaining 5 have Caravel-dedicated power-on functions (that can be overridden by CPU firmware or HKSPI).
 *  29 optionally support direct pad connections for analog signals [#f1]_.
-*  **For Caravan**: 11 are "bare analog" pads without GPIO circuitry and without ESD protection.
+*  **For Caravan**: 11 are "bare analog" pads without GPIO circuitry and without |esd| protection.
 *  Some offer additional Caravel SoC "management" functions (such as UART and additional debug functions).
 
 See: :doc:`gpio`
 
 .. rubric:: Footnotes
 
-.. [#f1] Caravel direct analog pad connections include ESD protection which typically limits full swing signals to about 50MHz.
+.. [#f1] Caravel direct analog pad connections include |esd| protection which typically limits full swing signals to about 50MHz.
 
 
 Dedicated clock input and DLL/DCO configurable clocking
@@ -111,7 +111,7 @@ Caravel provides **4 power domains**: two intended as nominal 1.8V digital suppl
 Caravel Management SoC Features
 -------------------------------
 
-The Management SoC's RISC-V CPU (RV32I) is built into the die area, adjacent the user project wrapper, and can be interfaced with your design, as well as externally to the chip.
+The Management SoC's RISC-V CPU (|rv32i|) is built into the die area, adjacent the user project wrapper, and can be interfaced with your design, as well as externally to the chip.
 
 The SoC is generated using :term:`Litex` and includes the following peripherals and capabilities that can be optionally enabled/disabled on subsets of the GPIO pins, to make the SoC useful both as a general-purpose microcontroller and a specialized test/debug interface for your design...
 
@@ -119,7 +119,7 @@ The SoC is generated using :term:`Litex` and includes the following peripherals 
 VexRiscv RISC-V CPU core
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-The CPU core is a :term:`VexRiscv` minimal+debug configuration. Intended for use either as a microcontroller, general-purpose CPU, control or debug interface to the user design. It can be considered as a lightweight single-core bare-metal microcontroller, programmable in C or RISC-V assembly (RV32I, 32-bit instructions specifically), and it comprises:
+The CPU core is a :term:`VexRiscv` minimal+debug configuration. Intended for use either as a microcontroller, general-purpose CPU, control or debug interface to the user design. It can be considered as a lightweight single-core bare-metal microcontroller, programmable in C or RISC-V assembly (|rv32i|, 32-bit instructions specifically), and it comprises:
 
 *  **Dedicated firmware ROM SPI master** for :term:`XIP` loading of firmware code from an external SPI memory into a local 16-word (64-byte) instruction cache.
 *  **1.5kByte** local SRAM for stack, scratch space/variables, or small high-speed in-memory executable subroutines.
