@@ -8,6 +8,9 @@ This is the Sphinx source code for new Caravel "readthedocs"-style documentation
 > [!NOTE]
 > The official source of this documentation is https://github.com/efabless/caravel_docs but at times https://github.com/algofoogle/caravel_docs might be more recent.
 
+> [!NOTE]
+> Looking for a PDF? See [`docs/build/simplepdf/caravel_frame_and_soc.pdf`](docs/build/simplepdf/caravel_frame_and_soc.pdf) and [PDF generation](#pdf-generation)
+
 ## Decisions made
 
 *   Continue using Sphinx as the documentation compiler, for compatibility with existing docs.

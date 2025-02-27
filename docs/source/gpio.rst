@@ -187,7 +187,7 @@ There are two exceptions, however:
       
          ``GPIO_MODE_MGMT_STD_BIDIRECTIONAL``
       -  0x1801
-      -  |TBC|
+      -  :tbc:`How is the OEB handled in this mode?`
    *  -  .. _GPIO_MODE_MGMT_STD_ANALOG:
       
          ``GPIO_MODE_MGMT_STD_ANALOG``
